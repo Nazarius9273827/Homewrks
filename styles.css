@@ -15,18 +15,17 @@
     background: rgb(0, 255, 0);
 }
 
-.div1 {
+.image {
     background: crimson;
     width: 100px;
     height: 100px;
-    transition: all;
     transition-property: all;
     transition-timing-function: linear;
     transition-duration: 2s;
     transition-delay: 0.5s;
 }
 
-.div1:hover {
+.image:hover {
     width: 150px;
     height: 150px;
   }
