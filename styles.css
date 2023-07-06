@@ -28,4 +28,61 @@
 .image:hover {
     width: 150px;
     height: 150px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    animation: color 5s infinite;
   }
+  
+  @keyframes color {
+    20% {
+      background: yellow;
+    }
+    40% {
+      background: green;
+    }
+    60% {
+      background: salmon;
+    }
+    80% {
+      background: slateblue;
+    }
+    100% {
+      background: springgreen;
+    }
+  }
+  
+  .circle {
+    width: 100px;
+    height: 100px;
+    background: rgb(0, 255, 157);
+    border: 1px double rgb(0, 153, 255);
+    border-radius: 50%;
+    animation-name: scale;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+    }
+    20% {
+      transform: scale(1.2);
+    }
+    80% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
