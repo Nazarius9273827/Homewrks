@@ -35,7 +35,7 @@
     height: 100px;
     background: red;
     position: relative;
-    animation: color 5s infinite;
+    animation: color 5s 3;
   }
   
   @keyframes color {
@@ -76,10 +76,10 @@
       transform: scale(1);
     }
     20% {
-      transform: scale(1.2);
+      transform: scale(1.5);
     }
     80% {
-      transform: scale(1.2);
+      transform: scale(1.5);
     }
     100% {
       transform: scale(1);
