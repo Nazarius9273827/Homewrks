@@ -191,7 +191,7 @@
   text-transform: uppercase;
   width: 370px;
   height: 60px;
-  position: relative;
+  position: absolute;
   padding-top: 23px;
 }
 
@@ -201,17 +201,19 @@
 }
 
 .title-card-1 {
-  bottom: 87px;
+  top: 3244px;
   background: rgba(47, 48, 58, 0.8);
 }
 
 .title-card-2 {
-  bottom: 87px;
+  top: 3244px;
+  left: 382px;
   background: rgba(47, 48, 58, 0.8);
 }
 
 .title-card-3 {
-  bottom: 87px;
+  top: 3244px;
+  left: 756px;
   background: rgba(47, 48, 58, 0.8);
 }
 
@@ -236,7 +238,7 @@
   background: mediumslateblue;
   position: absolute;
   left: 65px;
-  top: 4580px;
+  top: 3458px;
 }
 
 .instagram-icon,
