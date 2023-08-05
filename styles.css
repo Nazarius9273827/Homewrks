@@ -1,90 +1,97 @@
 .btn {
-    width: 150px;
-    height: 50px;
-    background: rgb(255, 0, 0);
-    border-radius: 50px;
-    border: none;
-    transition: 1s;
+  width: 150px;
+  height: 50px;
+  background: rgb(255, 0, 0);
+  border-radius: 50px;
+  border: none;
+  transition: 1s;
 }
 
 .btn-text {
-    color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 .btn:hover {
-    background: rgb(0, 255, 0);
+  background: rgb(0, 255, 0);
 }
 
 .image {
-    background: crimson;
-    width: 100px;
-    height: 100px;
-    transition-property: all;
-    transition-timing-function: linear;
-    transition-duration: 2s;
-    transition-delay: 0.5s;
+  background: crimson;
+  width: 100px;
+  height: 100px;
+  transition-property: all;
+  transition-timing-function: linear;
+  transition-duration: 2s;
+  transition-delay: 0.5s;
 }
 
 .image:hover {
-    width: 150px;
-    height: 150px;
+  width: 150px;
+  height: 150px;
 }
 
 .square {
-    width: 100px;
-    height: 100px;
-    background: red;
-    position: relative;
-    animation: color 5s 3;
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: color 5s 3;
+}
+
+@keyframes color {
+  20% {
+    background: yellow;
   }
-  
-  @keyframes color {
-    20% {
-      background: yellow;
-    }
-    40% {
-      background: green;
-    }
-    60% {
-      background: salmon;
-    }
-    80% {
-      background: slateblue;
-    }
-    100% {
-      background: springgreen;
-    }
+
+  40% {
+    background: green;
   }
-  
-  .circle {
-    width: 100px;
-    height: 100px;
-    background: rgb(0, 255, 157);
-    border: 1px double rgb(0, 153, 255);
-    border-radius: 50%;
-    animation-name: scale;
-    animation-duration: 4s;
-    animation-timing-function: linear;
-    animation-iteration-count: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  60% {
+    background: salmon;
   }
-  
-  @keyframes scale {
-    0% {
-      transform: scale(1);
-    }
-    20% {
-      transform: scale(1.5);
-    }
-    80% {
-      transform: scale(1.5);
-    }
-    100% {
-      transform: scale(1);
-    }
+
+  80% {
+    background: slateblue;
   }
+
+  100% {
+    background: springgreen;
+  }
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background: rgb(0, 255, 157);
+  border: 1px double rgb(0, 153, 255);
+  border-radius: 50%;
+  animation-name: scale;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.5);
+  }
+
+  80% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
 
 #icon {
   margin-left: 50px;
@@ -185,4 +192,195 @@
 
 .svg-container:hover path {
   color: #2196F3;
+}
+
+.header-btn {
+  width: 216px;
+  height: 50px;
+  border-radius: 4px;
+  background: #2196F3;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-btn-text {
+  color: #FFF;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.96px;
+}
+
+.close-btn {
+  position: relative;
+  left: 500px;
+  bottom: 72px;
+  background: none;
+  border: none;
+}
+
+.close-btn:hover path {
+  fill: #2196F3;
+}
+
+.backdrop {
+  background: rgba(0, 0, 0, 0.20);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.backdrop.is-hidden {
+  display: none;
+}
+
+.modal {
+  width: 528px;
+  height: 581px;
+  border-radius: 4px;
+  background: #FFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px;
+}
+
+.modal-field-input {
+  width: 448px;
+  height: 40px;
+  display: flex;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.20);
+}
+
+.modal-field-name {
+  color: #757575;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.12px;
+  display: flex;
+}
+
+.modal-form-coment {
+  width: 448px;
+height: 120px;
+border-radius: 4px;
+border: 1px solid rgba(33, 33, 33, 0.20);
+}
+
+.modal-form-checkbox {
+  color: #757575;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.42px;
+}
+
+.modal-form-header {
+  color: #212121;
+text-align: center;
+font-family: Roboto;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.6px;
+}
+
+.modal-form-icon {
+  position: relative;
+  top: 34px;
+  left: 8px;
+}
+
+span {
+  color: #2196F3;
+font-family: Roboto;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0.42px;
+text-decoration-line: underline;
+}
+
+.modal-form-btn {
+  width: 216px;
+  height: 50px;
+  border-radius: 4px;
+  background: #2196F3;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-form-btn-text {
+  color: #FFF;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.96px;
+}
+
+.footer-form-text {
+  font-family: Roboto;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.42px;
+text-transform: uppercase;
+}
+
+.footer-form-field {
+  width: 358px;
+height: 50px;
+border-radius: 4px;
+border: 1px solid rgba(255, 255, 255, 0.30);
+background: rgba(33, 150, 243, 0.00);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+margin: 20px 0;
+}
+
+.footer-form-btn {
+  width: 200px;
+height: 50px;
+border-radius: 4px;
+background: #2196F3;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+border: none;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.footer-form-btn-text {
+  color: #FFF;
+text-align: center;
+font-family: Roboto;
+font-style: normal;
+font-weight: 700;
+line-height: 30px;
+letter-spacing: 0.96px;
+}
+
+.btn-icon {
+  margin-left: 10px;
 }
