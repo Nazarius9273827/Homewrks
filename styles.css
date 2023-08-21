@@ -186,3 +186,38 @@
 .svg-container:hover path {
   color: #2196F3;
 }
+
+.menu-container {
+  position: relative;
+}
+
+.menu-trigger {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.side-menu {
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: 200px;
+  height: 500px;
+  background-color: #222;
+  opacity: 0,5;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease;
+}
+
+.side-menu:hover {
+  left: 0;
+}
+
+.list-item:hover {
+  cursor: pointer;
+  transition: color 400ms ease-in;
+  color: darkgoldenrod;
+}
