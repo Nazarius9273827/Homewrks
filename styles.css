@@ -187,15 +187,43 @@
   color: #2196F3;
 }
 
+.box {
+  width: 100px;
+  height: 100px;
+  background: salmon;
+}
+
+.box-1 {
+  width: 100px;
+  height: 100px;
+  background: lightgreen;
+  position: relative;
+  left: 115px;
+  top: 20px;
+}
+
+.box-2 {
+  width: 100px;
+  height: 100px;
+  background: mediumslateblue;
+  position: absolute;
+  left: 65px;
+  top: 2370px;
+}
+
 .menu-container {
   position: relative;
 }
 
 .menu-trigger {
-  padding: 10px;
-  background-color: #333;
+  position: absolute;
+  font-size: 25px;
   color: #fff;
   cursor: pointer;
+  transform: rotate(90deg);
+  transform-origin: 80% 120%;
+  top: 250px;
+  left: 110px;
 }
 
 .side-menu {
@@ -216,8 +244,17 @@
   left: 0;
 }
 
+.list {
+  padding-top: 100px;
+}
+
+.list-item {
+  list-style-type: none;
+  font-size: 20px;
+}
+
 .list-item:hover {
-  cursor: pointer;
-  transition: color 400ms ease-in;
+  cursor: none;
+  transition: color 300ms ease-in;
   color: darkgoldenrod;
 }
