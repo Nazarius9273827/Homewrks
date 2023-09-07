@@ -186,3 +186,75 @@
 .svg-container:hover path {
   color: #2196F3;
 }
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: salmon;
+}
+
+.box-1 {
+  width: 100px;
+  height: 100px;
+  background: lightgreen;
+  position: relative;
+  left: 115px;
+  top: 20px;
+}
+
+.box-2 {
+  width: 100px;
+  height: 100px;
+  background: mediumslateblue;
+  position: absolute;
+  left: 65px;
+  top: 2370px;
+}
+
+.menu-container {
+  position: relative;
+}
+
+.menu-trigger {
+  position: absolute;
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+  transform: rotate(90deg);
+  transform-origin: 80% 120%;
+  top: 250px;
+  left: 110px;
+}
+
+.side-menu {
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: 200px;
+  height: 500px;
+  background-color: #222;
+  opacity: 0,5;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease;
+}
+
+.side-menu:hover {
+  left: 0;
+}
+
+.list {
+  padding-top: 100px;
+}
+
+.list-item {
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.list-item:hover {
+  cursor: none;
+  transition: color 300ms ease-in;
+  color: darkgoldenrod;
+}
