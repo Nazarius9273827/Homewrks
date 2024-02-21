@@ -65,12 +65,12 @@ let floatingNumber = 10.567;
 console.log(`Округлене число: ${Math.floor(floatingNumber)}`);
 
 // Змінна для рядка з числом з плаваючою комою
-let floatString = "15.789";
+let floatString = "15.qwerty789";
 let parsedFloat = parseFloat(floatString);
 console.log(`Число з рядка з плаваючою комою: ${parsedFloat}`);
 
 // Змінна для рядка з цілим числом
-let intString = "25";
+let intString = "25qwerty";
 let parsedInt = parseInt(intString);
 console.log(`Ціле число з рядка: ${parsedInt}`);
 
