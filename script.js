@@ -109,3 +109,106 @@ let parsedInteger = parseInt(stringNumber);
 console.log(`Рядок перетворений у ціле число: ${parsedInteger}`);
 let stringInteger = integerNumber.toString();
 console.log(`Ціле число перетворене у рядок: ${stringInteger}`);
+
+        // Task 1: Drink Selection
+        const drinkSelect = document.getElementById('drinkSelect');
+        const drinkMessage = document.getElementById('drinkMessage');
+
+        drinkSelect.addEventListener('change', function() {
+            drinkMessage.textContent = 'You selected ' + this.value;
+        });
+
+        // Task 2: Day Check
+        function checkDay() {
+            const dayInput = document.getElementById('dayInput').value.toLowerCase();
+            const dayMessage = document.getElementById('dayMessage');
+            const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+            const weekend = ['saturday', 'sunday'];
+
+            if (weekdays.includes(dayInput)) {
+                dayMessage.textContent = 'It\'s a working day.';
+            } else if (weekend.includes(dayInput)) {
+                dayMessage.textContent = 'It\'s a weekend!';
+            } else {
+                dayMessage.textContent = 'Invalid input!';
+            }
+        }
+
+        // Task 3: Season Check
+        function checkSeason() {
+            const monthInput = parseInt(document.getElementById('monthInput').value);
+            const seasonMessage = document.getElementById('seasonMessage');
+
+            if (monthInput >= 1 && monthInput <= 12) {
+                const seasons = ['Winter', 'Spring', 'Summer', 'Autumn'];
+                const season = Math.floor((monthInput % 12) / 3);
+                seasonMessage.textContent = 'This month is in ' + seasons[season];
+            } else {
+                seasonMessage.textContent = 'Invalid month input!';
+            }
+        }
+
+        // Task 4: Number of Days
+        function checkMonthDays() {
+            const monthDaysInput = parseInt(document.getElementById('monthDaysInput').value);
+            const monthDaysMessage = document.getElementById('monthDaysMessage');
+
+            if (monthDaysInput >= 1 && monthDaysInput <= 12) {
+                const daysInMonth = new Date(2024, monthDaysInput, 0).getDate();
+                monthDaysMessage.textContent = 'There are ' + daysInMonth + ' days in this month.';
+            } else {
+                monthDaysMessage.textContent = 'Invalid month input!';
+            }
+        }
+
+        // Task 5: Traffic Light Action
+        function checkColor() {
+            const colorInput = document.getElementById('colorInput').value.toLowerCase();
+            const colorMessage = document.getElementById('colorMessage');
+
+            switch (colorInput) {
+                case 'red':
+                    colorMessage.textContent = 'Stop';
+                    break;
+                case 'green':
+                    colorMessage.textContent = 'Go';
+                    break;
+                case 'yellow':
+                    colorMessage.textContent = 'Wait';
+                    break;
+                default:
+                    colorMessage.textContent = 'Invalid color!';
+            }
+        }
+
+        // Task 6: Calculator
+        function calculate() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operation = document.getElementById('operation').value;
+            const result = document.getElementById('result');
+
+            let output;
+            switch (operation) {
+                case '+':
+                    output = num1 + num2;
+                    break;
+                case '-':
+                    output = num1 - num2;
+                    break;
+                case '*':
+                    output = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 === 0) {
+                        output = 'Error! Division by zero.';
+                    } else {
+                        output = num1 / num2;
+                    }
+                    break;
+                default:
+                    output = 'Invalid operation!';
+            }
+
+            result.textContent = 'Result: ' + output;
+        }
