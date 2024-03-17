@@ -49,20 +49,20 @@ console.log(`Електронна адреса містить символ @: ${
 console.log(`Загальна кількість символів в електронній адресі: ${emailLength}`);
 
 // Поєднання слів в змінну fullName та додавання "Viktor"
-let my = "My";
-let name = "name";
-let is = "is";
-let fullName = `${my} ${name} ${is} Viktor`;
-console.log(fullName);
+// let my = "My";
+// let name = "name";
+// let is = "is";
+// let fullName = `${my} ${name} ${is} Viktor`;
+// console.log(fullName);
 
 // Виведення повідомлення про сплату через alert
-let userName = "Олександре";
-let payment = 300;
-alert(`Дякуємо, ${userName}! До сплати ${payment} гривень`);
-// Змінні для температур
-let celsiusTemperature = 25;
-let fahrenheitTemperature = (celsiusTemperature * 9/5) + 32;
-console.log(`Температура у Фаренгейтах: ${fahrenheitTemperature}°F`);
+// let userName = "Олександре";
+// let payment = 300;
+// alert(`Дякуємо, ${userName}! До сплати ${payment} гривень`);
+// // Змінні для температур
+// let celsiusTemperature = 25;
+// let fahrenheitTemperature = (celsiusTemperature * 9/5) + 32;
+// console.log(`Температура у Фаренгейтах: ${fahrenheitTemperature}°F`);
 
 // Змінна для кількості днів у місяці
 let daysInMonth = 30;
@@ -111,104 +111,134 @@ let stringInteger = integerNumber.toString();
 console.log(`Ціле число перетворене у рядок: ${stringInteger}`);
 
         // Task 1: Drink Selection
-        const drinkSelect = document.getElementById('drinkSelect');
-        const drinkMessage = document.getElementById('drinkMessage');
+        let answer = prompt("Select drink");
+        switch (answer) {
+          case "Coffee":
+            console.log("You selected coffee");
+            break;
+          case "Tea":
+            console.log("You selected tea");
+            break;
+          case "Juice":
+            console.log("You selected juice");
+            break;
+          default:
+            console.log("You selected nothing");
+        }
 
-        drinkSelect.addEventListener('change', function() {
-            drinkMessage.textContent = 'You selected ' + this.value;
-        });
 
         // Task 2: Day Check
-        function checkDay() {
-            const dayInput = document.getElementById('dayInput').value.toLowerCase();
-            const dayMessage = document.getElementById('dayMessage');
-            const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
-            const weekend = ['saturday', 'sunday'];
+        let day = prompt("Select day");
+        switch (day) {
+            case "Monday":
+            case "Tuesday":
+            case "Wednesday":
+            case "Thursday":
+            case "Friday":
+              console.log("It's a working day.");
+              break;
+            case "Saturday":
+            case "Sunday":
+              console.log("It's a weekend!");
+              break;
+            default:
+              console.log("Invalid input!");
+          }
 
-            if (weekdays.includes(dayInput)) {
-                dayMessage.textContent = 'It\'s a working day.';
-            } else if (weekend.includes(dayInput)) {
-                dayMessage.textContent = 'It\'s a weekend!';
-            } else {
-                dayMessage.textContent = 'Invalid input!';
-            }
-        }
+        // // Task 3: Season Check
+        let numberOfmonth = prompt("Select number of month");
+        switch (numberOfmonth) {
+            case "12":
+            case "1":
+            case "2":
+              console.log("Winter");
+              break;
+            case "3":
+            case "4":
+            case "5":
+              console.log("Spring");
+              break;
+            case "6":
+            case "7":
+            case "8":
+              console.log("Summer");
+              break;
+            case "9":
+            case "10":
+            case "11":
+              console.log("Autumn");
+              break;
+            default:
+              console.log("Invalid input!");
+          }
 
-        // Task 3: Season Check
-        function checkSeason() {
-            const monthInput = parseInt(document.getElementById('monthInput').value);
-            const seasonMessage = document.getElementById('seasonMessage');
 
-            if (monthInput >= 1 && monthInput <= 12) {
-                const seasons = ['Winter', 'Spring', 'Summer', 'Autumn'];
-                const season = Math.floor((monthInput % 12) / 3);
-                seasonMessage.textContent = 'This month is in ' + seasons[season];
-            } else {
-                seasonMessage.textContent = 'Invalid month input!';
-            }
-        }
 
-        // Task 4: Number of Days
-        function checkMonthDays() {
-            const monthDaysInput = parseInt(document.getElementById('monthDaysInput').value);
-            const monthDaysMessage = document.getElementById('monthDaysMessage');
+        // // Task 4: Number of Days
+        let monthNumber = prompt("Select number of month");
+        switch (monthNumber) {
+            case "1":
+            case "3":
+            case "5":
+            case "7":
+            case "8":
+            case "10":
+            case "12":
+              console.log("31 day");
+              break;
+            case "4":
+            case "6":
+            case "9":
+            case "11":
+              console.log("30 days");
+              break;
+            case "2":
+              console.log("28 or 29 days");
+              break;
+            default:
+              console.log("Invalid input!");
+          }
 
-            if (monthDaysInput >= 1 && monthDaysInput <= 12) {
-                const daysInMonth = new Date(2024, monthDaysInput, 0).getDate();
-                monthDaysMessage.textContent = 'There are ' + daysInMonth + ' days in this month.';
-            } else {
-                monthDaysMessage.textContent = 'Invalid month input!';
-            }
-        }
 
-        // Task 5: Traffic Light Action
-        function checkColor() {
-            const colorInput = document.getElementById('colorInput').value.toLowerCase();
-            const colorMessage = document.getElementById('colorMessage');
+        // // Task 5: Traffic Light Action
+        let color = prompt("Select color");
+        switch (color) {
+            case "Red":
+              console.log("Stop!");
+              break;
+            case "Yellow":
+              console.log("Wait!");
+              break;
+            case "Green":
+              console.log("Go!");
+              break;
+            default:
+              console.log("Invalid input!");
+          }
 
-            switch (colorInput) {
-                case 'red':
-                    colorMessage.textContent = 'Stop';
-                    break;
-                case 'green':
-                    colorMessage.textContent = 'Go';
-                    break;
-                case 'yellow':
-                    colorMessage.textContent = 'Wait';
-                    break;
-                default:
-                    colorMessage.textContent = 'Invalid color!';
-            }
-        }
+        // // Task 6: Calculator
+        // let firstOperationNumber = prompt("Select first number");
+        // let operationSign = prompt("Select operation sign");
+        // let secondOperationNumber = prompt("Select second number");
 
-        // Task 6: Calculator
-        function calculate() {
-            const num1 = parseFloat(document.getElementById('num1').value);
-            const num2 = parseFloat(document.getElementById('num2').value);
-            const operation = document.getElementById('operation').value;
-            const result = document.getElementById('result');
-
-            let output;
-            switch (operation) {
-                case '+':
-                    output = num1 + num2;
-                    break;
-                case '-':
-                    output = num1 - num2;
-                    break;
-                case '*':
-                    output = num1 * num2;
-                    break;
-                case '/':
-                    if (num2 === 0) {
-                        output = 'Error! Division by zero.';
-                    } else {
-                        output = num1 / num2;
-                    }
-                    break;
-                default:
-                    output = 'Invalid operation!';
-            }
-
-            result.textContent = 'Result: ' + output;
-        }
+        //     let output;
+        //     switch (operationSign) {
+        //         case '+':
+        //             console.log(firstOperationNumber + secondOperationNumber);
+        //             break;
+        //         case '-':
+        //             console.log(firstOperationNumber + secondOperationNumber);
+        //             break;
+        //         case '*':
+        //             console.log(firstOperationNumber + secondOperationNumber);
+        //             break;
+        //         case '/':
+        //             if (secondOperationNumber === 0) {
+        //                 console.log("Error! Division by zero.");
+        //             } else {
+        //                 console.log(firstOperationNumber + secondOperationNumber);
+        //             }
+        //             break;
+        //         default:
+        //             console.log("Invalid operation!");
+        //     }
