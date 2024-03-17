@@ -109,3 +109,29 @@ let parsedInteger = parseInt(stringNumber);
 console.log(`Рядок перетворений у ціле число: ${parsedInteger}`);
 let stringInteger = integerNumber.toString();
 console.log(`Ціле число перетворене у рядок: ${stringInteger}`);
+
+
+let i = 1;
+while (i <= 10) {
+  console.log(i);
+  i++;
+}
+
+for (let j = 2; j <= 20; j += 2) {
+  console.log(j);
+}
+
+const multiplier = 7;
+for (let k = 1; k <= 10; k++) {
+  console.log(`${multiplier} * ${k} = ${multiplier * k}`);
+}
+
+let l = 1;
+while (l <= 20) {
+  if (l % 3 === 0) {
+    l++;
+    continue;
+  }
+  console.log(l);
+  l++;
+}
