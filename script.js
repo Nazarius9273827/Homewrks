@@ -109,3 +109,48 @@ let parsedInteger = parseInt(stringNumber);
 console.log(`Рядок перетворений у ціле число: ${parsedInteger}`);
 let stringInteger = integerNumber.toString();
 console.log(`Ціле число перетворене у рядок: ${stringInteger}`);
+
+// Створити масив з трьох чисел. Змінити значення другого елемента масиву на 10.
+let numbersArray = [1, 2, 3];
+numbersArray[1] = 10;
+
+// Створити масив із трьох рядків. Додати до масиву ще одну рядків.
+let stringsArray = ["one", "two", "three"];
+stringsArray.push("four");
+
+// Створити скрипт який поверне суму всіх чисел в масиві.
+function sumArray(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    return sum;
+}
+
+// Створити масив з 5-ти чисел. Вивести на екран всі елементи масиву за допомогою циклу for.
+let numbersArray2 = [1, 2, 3, 4, 5];
+for (let i = 0; i < numbersArray2.length; i++) {
+    console.log(numbersArray2[i]);
+}
+
+// Створити масив із 5-ти рядків. Вивести на екран кожен рядок з масиву, який містить більше 5-ти символів.
+let stringsArray2 = ["one", "two", "three", "four", "five"];
+for (let i = 0; i < stringsArray2.length; i++) {
+    if (stringsArray2[i].length > 5) {
+        console.log(stringsArray2[i]);
+    }
+}
+
+// Створити масив з 10-ти чисел. Знайти та вивести на екран максимальне значення з масиву.
+let numbersArray3 = [5, 2, 8, 10, 3, 7, 1, 9, 4, 6];
+let maxNumber = Math.max(...numbersArray3);
+console.log("Максимальне значення з масиву:", maxNumber);
+
+// Створити масив з 10-ти чисел. Знайти всі парні числа в масиві та вивести їх на екран.
+let numbersArray4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log("Парні числа в масиві:");
+for (let i = 0; i < numbersArray4.length; i++) {
+    if (numbersArray4[i] % 2 === 0) {
+        console.log(numbersArray4[i]);
+    }
+}
