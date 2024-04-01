@@ -48,21 +48,21 @@ let emailLength = email.length;
 console.log(`Електронна адреса містить символ @: ${containsAtSymbol}`);
 console.log(`Загальна кількість символів в електронній адресі: ${emailLength}`);
 
-// Поєднання слів в змінну fullName та додавання "Viktor"
-let my = "My";
-let name = "name";
-let is = "is";
-let fullName = `${my} ${name} ${is} Viktor`;
-console.log(fullName);
+// // Поєднання слів в змінну fullName та додавання "Viktor"
+// let my = "My";
+// let name = "name";
+// let is = "is";
+// let fullName = `${my} ${name} ${is} Viktor`;
+// console.log(fullName);
 
-// Виведення повідомлення про сплату через alert
-let userName = "Олександре";
-let payment = 300;
-alert(`Дякуємо, ${userName}! До сплати ${payment} гривень`);
-// Змінні для температур
-let celsiusTemperature = 25;
-let fahrenheitTemperature = (celsiusTemperature * 9/5) + 32;
-console.log(`Температура у Фаренгейтах: ${fahrenheitTemperature}°F`);
+// // Виведення повідомлення про сплату через alert
+// let userName = "Олександре";
+// let payment = 300;
+// alert(`Дякуємо, ${userName}! До сплати ${payment} гривень`);
+// // Змінні для температур
+// let celsiusTemperature = 25;
+// let fahrenheitTemperature = (celsiusTemperature * 9/5) + 32;
+// console.log(`Температура у Фаренгейтах: ${fahrenheitTemperature}°F`);
 
 // Змінна для кількості днів у місяці
 let daysInMonth = 30;
@@ -109,3 +109,51 @@ let parsedInteger = parseInt(stringNumber);
 console.log(`Рядок перетворений у ціле число: ${parsedInteger}`);
 let stringInteger = integerNumber.toString();
 console.log(`Ціле число перетворене у рядок: ${stringInteger}`);
+
+// Task 1
+// for
+const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+let string = '';
+
+for (let i = 0; i < friends.length; i++) {
+  string += friends[i];
+  if (i !== friends.length - 1) {
+    string += ', ';
+  }
+}
+
+console.log(string);
+
+// join()
+const joinedString = friends.join(', ');
+console.log(joinedString);
+
+// Task 2
+const cards = [
+    'Карточка-1',
+    'Карточка-2',
+    'Карточка-3',
+    'Карточка-4',
+    'Карточка-5'
+];
+
+const cardToRemove = 'Карточка-3';
+const cardToInsert = 'Карточка-6';
+const cardToUpdate = 'Карточка-4';
+
+// Removing
+const indexToRemove = cards.indexOf(cardToRemove);
+if (indexToRemove !== -1) {
+    cards.splice(indexToRemove, 1);
+}
+
+// Inserting
+cards.push(cardToInsert);
+
+// Updating
+const indexToUpdate = cards.indexOf(cardToUpdate);
+if (indexToUpdate !== -1) {
+    cards[indexToUpdate] = 'Оновлена Карточка-4';
+}
+
+console.log(cards);
