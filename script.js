@@ -242,3 +242,48 @@
                 default:
                     console.log("Invalid operation!");
             }
+            
+            function logItems(array) {
+              for (let i = 0; i < array.length; i++) {
+                console.log(`${i + 1} - ${array[i]}`);
+              }
+            }
+            
+            // Приклад використання:
+            const fruits = ['Mango', 'Poly', 'Ajax'];
+            logItems(fruits);
+
+            function calculateEngravingPrice(message, pricePerWord) {
+              // Розділяємо рядок на слова за прогалинами
+              const words = message.split(' ');
+              // Підрахунок загальної ціни
+              const totalPrice = words.length * pricePerWord;
+              return totalPrice;
+            }
+            
+            // Приклад використання:
+            const message = "Lorem ipsum dolor sit amet";
+            const pricePerWord = 10;
+            const totalPrice = calculateEngravingPrice(message, pricePerWord);
+            console.log(totalPrice); // Виведе 50
+
+            function findLongestWord(string) {
+              // Розділяємо рядок на слова за прогалинами
+              const words = string.split(' ');
+              let longestWord = '';
+            
+              // Ітеруємося по кожному слову
+              for (const word of words) {
+                // Якщо поточне слово довше за найдовше знайдене, замінюємо його
+                if (word.length > longestWord.length) {
+                  longestWord = word;
+                }
+              }
+            
+              return longestWord;
+            }
+            
+            // Приклад використання:
+            const sentence = "Lorem ipsum dolor sit amet consectetur adipisicing elit";
+            const longestWord = findLongestWord(sentence);
+            console.log(longestWord);      
