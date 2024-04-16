@@ -286,4 +286,59 @@
             // Приклад використання:
             const sentence = "Lorem ipsum dolor sit amet consectetur adipisicing elit";
             const longestWord = findLongestWord(sentence);
-            console.log(longestWord);      
+            console.log(longestWord);
+            
+            function formatString(string) {
+              if (string.length <= 40) {
+                  return string;
+              } else {
+                  return string.slice(0, 37) + '...';
+              }
+          }
+          
+          console.log(formatString("Це рядок із менш ніж 40 символами."));
+          console.log(formatString("Це дуже довгий рядок, який перевищує 40 символів тому його потрібно обрізати."));
+
+          function checkForSpam(message) {
+            // Переводимо рядок в нижній регістр для порівняння
+            const lowerCaseMessage = message.toLowerCase();
+            
+            // Перевіряємо, чи містить рядок заборонені слова
+            if (lowerCaseMessage.includes('spam') || lowerCaseMessage.includes('sale')) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+      
+        console.log(checkForSpam("Купівля цього товару - це найкраща розпродаж!"));
+        console.log(checkForSpam("Цей лист не містить заборонених слів."));
+        console.log(checkForSpam("Вигравайте суперпризи у нашому розіграші!"));
+        console.log(checkForSpam("Спам - це неприємна річ."));
+        
+        const numbers = [];
+
+while (true) {
+    let input = prompt('Введіть число:');
+    
+    if (input === null) {
+        break;
+    } else {
+        input = Number(input);
+        if (!isNaN(input)) {
+            numbers.push(input);
+        } else {
+            alert('Було введено не число, попробуйте ще раз.');
+        }
+    }
+}
+
+if (numbers.length > 0) {
+    let total = 0;
+    for (let number of numbers) {
+        total += number;
+    }
+    console.log(`Загальна сума чисел дорівнює ${total}`);
+} else {
+    console.log('Масив чисел порожній.');
+}
