@@ -242,3 +242,103 @@
                 default:
                     console.log("Invalid operation!");
             }
+            
+            function logItems(array) {
+              for (let i = 0; i < array.length; i++) {
+                console.log(`${i + 1} - ${array[i]}`);
+              }
+            }
+            
+            // Приклад використання:
+            const fruits = ['Mango', 'Poly', 'Ajax'];
+            logItems(fruits);
+
+            function calculateEngravingPrice(message, pricePerWord) {
+              // Розділяємо рядок на слова за прогалинами
+              const words = message.split(' ');
+              // Підрахунок загальної ціни
+              const totalPrice = words.length * pricePerWord;
+              return totalPrice;
+            }
+            
+            // Приклад використання:
+            const message = "Lorem ipsum dolor sit amet";
+            const pricePerWord = 10;
+            const totalPrice = calculateEngravingPrice(message, pricePerWord);
+            console.log(totalPrice); // Виведе 50
+
+            function findLongestWord(string) {
+              // Розділяємо рядок на слова за прогалинами
+              const words = string.split(' ');
+              let longestWord = '';
+            
+              // Ітеруємося по кожному слову
+              for (const word of words) {
+                // Якщо поточне слово довше за найдовше знайдене, замінюємо його
+                if (word.length > longestWord.length) {
+                  longestWord = word;
+                }
+              }
+            
+              return longestWord;
+            }
+            
+            // Приклад використання:
+            const sentence = "Lorem ipsum dolor sit amet consectetur adipisicing elit";
+            const longestWord = findLongestWord(sentence);
+            console.log(longestWord);
+            
+            function formatString(string) {
+              if (string.length <= 40) {
+                  return string;
+              } else {
+                  return string.slice(0, 37) + '...';
+              }
+          }
+          
+          console.log(formatString("Це рядок із менш ніж 40 символами."));
+          console.log(formatString("Це дуже довгий рядок, який перевищує 40 символів тому його потрібно обрізати."));
+
+          function checkForSpam(message) {
+            // Переводимо рядок в нижній регістр для порівняння
+            const lowerCaseMessage = message.toLowerCase();
+            
+            // Перевіряємо, чи містить рядок заборонені слова
+            if (lowerCaseMessage.includes('spam') || lowerCaseMessage.includes('sale')) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+      
+        console.log(checkForSpam("Купівля цього товару - це найкраща розпродаж!"));
+        console.log(checkForSpam("Цей лист не містить заборонених слів."));
+        console.log(checkForSpam("Вигравайте суперпризи у нашому розіграші!"));
+        console.log(checkForSpam("Спам - це неприємна річ."));
+        
+        const numbers = [];
+
+while (true) {
+    let input = prompt('Введіть число:');
+    
+    if (input === null) {
+        break;
+    } else {
+        input = Number(input);
+        if (!isNaN(input)) {
+            numbers.push(input);
+        } else {
+            alert('Було введено не число, попробуйте ще раз.');
+        }
+    }
+}
+
+if (numbers.length > 0) {
+    let total = 0;
+    for (let number of numbers) {
+        total += number;
+    }
+    console.log(`Загальна сума чисел дорівнює ${total}`);
+} else {
+    console.log('Масив чисел порожній.');
+}
