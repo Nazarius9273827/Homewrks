@@ -217,28 +217,110 @@
         //   }
 
         // Task 6: Calculator
-        let firstOperationNumber = prompt("Select first number");
-        let operationSign = prompt("Select operation sign");
-        let secondOperationNumber = prompt("Select second number");
+        // let firstOperationNumber = prompt("Select first number");
+        // let operationSign = prompt("Select operation sign");
+        // let secondOperationNumber = prompt("Select second number");
 
-            let output;
-            switch (operationSign) {
-                case '+':
-                    console.log(Number(firstOperationNumber) + Number(secondOperationNumber));
-                    break;
-                case '-':
-                  console.log(Number(firstOperationNumber) - Number(secondOperationNumber));
-                    break;
-                case '*':
-                  console.log(Number(firstOperationNumber) * Number(secondOperationNumber));
-                    break;
-                case '/':
-                    if (secondOperationNumber === 0) {
-                        console.log("Error! Division by zero.");
-                    } else {
-                      console.log(Number(firstOperationNumber) / Number(secondOperationNumber));
-                    }
-                    break;
-                default:
-                    console.log("Invalid operation!");
-            }
+        //     let output;
+        //     switch (operationSign) {
+        //         case '+':
+        //             console.log(Number(firstOperationNumber) + Number(secondOperationNumber));
+        //             break;
+        //         case '-':
+        //           console.log(Number(firstOperationNumber) - Number(secondOperationNumber));
+        //             break;
+        //         case '*':
+        //           console.log(Number(firstOperationNumber) * Number(secondOperationNumber));
+        //             break;
+        //         case '/':
+        //             if (secondOperationNumber === 0) {
+        //                 console.log("Error! Division by zero.");
+        //             } else {
+        //               console.log(Number(firstOperationNumber) / Number(secondOperationNumber));
+        //             }
+        //             break;
+        //         default:
+        //             console.log("Invalid operation!");
+        //     }
+
+// 1. Створення об'єкта "bankAccount"
+let bankAccount = {
+  ownerName: "",
+  accountNumber: "",
+  balance: 0,
+  deposit: function(amount) {
+      this.balance += amount;
+      console.log(`Гроші успішно додано на рахунок. Залишок: ${this.balance}`);
+  },
+  withdraw: function(amount) {
+      if (amount <= this.balance) {
+          this.balance -= amount;
+          console.log(`Гроші успішно знято з рахунку. Залишок: ${this.balance}`);
+      } else {
+          console.log("Недостатньо коштів на рахунку!");
+      }
+  }
+};
+
+// 2. Створення об'єкта "weather"
+let weather = {
+  temperature: 0,
+  humidity: 0,
+  windSpeed: 0,
+  checkTemperature: function() {
+      return this.temperature < 0;
+  }
+};
+
+// 3. Створення об'єкта "user"
+let user = {
+  name: "",
+  email: "",
+  password: "",
+  login: function(email, password) {
+      if (email === this.email && password === this.password) {
+          console.log("Ви успішно увійшли!");
+      } else {
+          console.log("Неправильний email або пароль!");
+      }
+  }
+};
+
+// 4. Створення об'єкта "movie"
+let movie = {
+  title: "",
+  director: "",
+  year: "",
+  rating: "",
+  checkRating: function() {
+      return this.rating > 8;
+  }
+};
+
+// Використання prompt для введення даних користувачем та виклик методів
+bankAccount.ownerName = prompt("Введіть ваше ім'я:");
+bankAccount.accountNumber = prompt("Введіть номер вашого рахунку:");
+let depositAmount = parseFloat(prompt("Введіть суму для поповнення рахунку:"));
+bankAccount.deposit(depositAmount);
+
+weather.temperature = parseFloat(prompt("Введіть температуру:"));
+if (weather.checkTemperature()) {
+  console.log("Температура нижче 0 градусів Цельсія");
+} else {
+  console.log("Температура вище або рівна 0 градусів Цельсія");
+}
+
+user.email = prompt("Введіть ваш email:");
+user.password = prompt("Введіть ваш пароль:");
+user.login(prompt("Введіть ваш email для входу:"), prompt("Введіть ваш пароль для входу:"));
+
+movie.title = "Inception";
+movie.director = "Christopher Nolan";
+movie.year = "2010";
+movie.rating = 8.8;
+console.log(`Назва фільму: ${movie.title}, Рейтинг: ${movie.rating}`);
+if (movie.checkRating()) {
+  console.log("Фільм має високий рейтинг!");
+} else {
+  console.log("Фільм має низький рейтинг.");
+}
