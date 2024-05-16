@@ -244,9 +244,9 @@
         //     }
 
             const user = {
-              name: 'John',
-              age: 30,
-              hobby: 'reading',
+              name: 'Nazar',
+              age: 15,
+              hobby: 'IT',
               premium: true
             };
             
