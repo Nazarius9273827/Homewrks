@@ -274,9 +274,9 @@ let weather = {
 
 // 3. Створення об'єкта "user"
 let user = {
-  name: "",
-  email: "",
-  password: "",
+  name: "Test",
+  email: "test123@gmail.com",
+  password: "12345678",
   login: function(email, password) {
       if (email === this.email && password === this.password) {
           console.log("Ви успішно увійшли!");
