@@ -217,28 +217,69 @@
         //   }
 
         // Task 6: Calculator
-        let firstOperationNumber = prompt("Select first number");
-        let operationSign = prompt("Select operation sign");
-        let secondOperationNumber = prompt("Select second number");
+        // let firstOperationNumber = prompt("Select first number");
+        // let operationSign = prompt("Select operation sign");
+        // let secondOperationNumber = prompt("Select second number");
 
-            let output;
-            switch (operationSign) {
-                case '+':
-                    console.log(Number(firstOperationNumber) + Number(secondOperationNumber));
-                    break;
-                case '-':
-                  console.log(Number(firstOperationNumber) - Number(secondOperationNumber));
-                    break;
-                case '*':
-                  console.log(Number(firstOperationNumber) * Number(secondOperationNumber));
-                    break;
-                case '/':
-                    if (secondOperationNumber === 0) {
-                        console.log("Error! Division by zero.");
-                    } else {
-                      console.log(Number(firstOperationNumber) / Number(secondOperationNumber));
-                    }
-                    break;
-                default:
-                    console.log("Invalid operation!");
+        //     let output;
+        //     switch (operationSign) {
+        //         case '+':
+        //             console.log(Number(firstOperationNumber) + Number(secondOperationNumber));
+        //             break;
+        //         case '-':
+        //           console.log(Number(firstOperationNumber) - Number(secondOperationNumber));
+        //             break;
+        //         case '*':
+        //           console.log(Number(firstOperationNumber) * Number(secondOperationNumber));
+        //             break;
+        //         case '/':
+        //             if (secondOperationNumber === 0) {
+        //                 console.log("Error! Division by zero.");
+        //             } else {
+        //               console.log(Number(firstOperationNumber) / Number(secondOperationNumber));
+        //             }
+        //             break;
+        //         default:
+        //             console.log("Invalid operation!");
+        //     }
+
+            const users = [
+              { id: 1, name: 'John Doe', age: 25, eyeColor: 'blue', gender: 'male', isActive: true, email: 'john.doe@example.com' },
+              { id: 2, name: 'Jane Smith', age: 30, eyeColor: 'green', gender: 'female', isActive: false, email: 'jane.smith@example.com' },
+              { id: 3, name: 'Alice Johnson', age: 28, eyeColor: 'brown', gender: 'female', isActive: true, email: 'alice.johnson@example.com' },
+              { id: 4, name: 'Bob Brown', age: 22, eyeColor: 'blue', gender: 'male', isActive: false, email: 'bob.brown@example.com' }
+            ];
+            
+            const userNames = users.map(user => user.name);
+            console.log(userNames);
+
+            function getUsersByEyeColor(users, color) {
+              return users.filter(user => user.eyeColor === color);
             }
+            
+            const usersWithBlueEyes = getUsersByEyeColor(users, 'blue');
+            console.log(usersWithBlueEyes);
+            
+            function getUserNamesByGender(users, gender) {
+              return users.filter(user => user.gender === gender).map(user => user.name);
+            }
+            
+            const maleUserNames = getUserNamesByGender(users, 'male');
+            console.log(maleUserNames);
+
+            const inactiveUsers = users.filter(user => !user.isActive);
+            console.log(inactiveUsers);
+
+            function getUserByEmail(users, email) {
+              return users.find(user => user.email === email);
+            }
+            
+            const userByEmail = getUserByEmail(users, 'alice.johnson@example.com');
+            console.log(userByEmail);
+
+            function getUsersByAgeRange(users, min, max) {
+              return users.filter(user => user.age >= min && user.age <= max);
+            }
+            
+            const usersInAgeRange = getUsersByAgeRange(users, 25, 30);
+            console.log(usersInAgeRange);
