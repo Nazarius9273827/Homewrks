@@ -217,28 +217,134 @@
         //   }
 
         // Task 6: Calculator
-        let firstOperationNumber = prompt("Select first number");
-        let operationSign = prompt("Select operation sign");
-        let secondOperationNumber = prompt("Select second number");
+        // let firstOperationNumber = prompt("Select first number");
+        // let operationSign = prompt("Select operation sign");
+        // let secondOperationNumber = prompt("Select second number");
 
-            let output;
-            switch (operationSign) {
-                case '+':
-                    console.log(Number(firstOperationNumber) + Number(secondOperationNumber));
-                    break;
-                case '-':
-                  console.log(Number(firstOperationNumber) - Number(secondOperationNumber));
-                    break;
-                case '*':
-                  console.log(Number(firstOperationNumber) * Number(secondOperationNumber));
-                    break;
-                case '/':
-                    if (secondOperationNumber === 0) {
-                        console.log("Error! Division by zero.");
-                    } else {
-                      console.log(Number(firstOperationNumber) / Number(secondOperationNumber));
-                    }
-                    break;
-                default:
-                    console.log("Invalid operation!");
+        //     let output;
+        //     switch (operationSign) {
+        //         case '+':
+        //             console.log(Number(firstOperationNumber) + Number(secondOperationNumber));
+        //             break;
+        //         case '-':
+        //           console.log(Number(firstOperationNumber) - Number(secondOperationNumber));
+        //             break;
+        //         case '*':
+        //           console.log(Number(firstOperationNumber) * Number(secondOperationNumber));
+        //             break;
+        //         case '/':
+        //             if (secondOperationNumber === 0) {
+        //                 console.log("Error! Division by zero.");
+        //             } else {
+        //               console.log(Number(firstOperationNumber) / Number(secondOperationNumber));
+        //             }
+        //             break;
+        //         default:
+        //             console.log("Invalid operation!");
+        //     }
+
+            const user = {
+              name: 'Nazar',
+              age: 15,
+              hobby: 'IT',
+              premium: true
+            };
+            
+            user.mood = 'happy';
+            
+            user.hobby = 'skydiving';
+            
+            user.premium = false;
+            
+            for (const key of Object.keys(user)) {
+              console.log(`${key}: ${user[key]}`);
             }
+
+            function countProps(obj) {
+              var keys = Object.keys(obj);
+              return keys.length;
+            }
+            
+            var car = {
+              brand: 'Toyota',
+              model: 'Camry',
+              year: 2022
+            };
+            
+            console.log(countProps(car));
+
+            function findBestEmployee(employees) {
+              let maxTasks = 0;
+              let bestEmployee = '';
+          
+              for (const employee in employees) {
+                  if (employees.hasOwnProperty(employee)) {
+                      if (employees[employee] > maxTasks) {
+                          maxTasks = employees[employee];
+                          bestEmployee = employee;
+                      }
+                  }
+              }
+          
+              return bestEmployee;
+          }
+          
+          const employees = {
+              'John': 10,
+              'Jane': 8,
+              'Doe': 12,
+              'Alice': 9
+          };
+          
+          console.log(findBestEmployee(employees));
+
+          function countTotalSalary(workers) {
+            let totalSalary = 0;
+          
+            for (let worker in workers) {
+              totalSalary += workers[worker];
+            }
+          
+            return totalSalary;
+          }
+          
+          const workers = {
+            "John": 2000,
+            "Jane": 1800,
+            "Doe": 2200
+          };
+          
+          console.log(countTotalSalary(workers));
+
+          function getAllPropValues(arr, prop) {
+            return arr.map(obj => obj[prop]).filter(value => value !== undefined);
+        }
+        
+        const arr = [
+            { name: 'John', age: 25 },
+            { name: 'Jane', age: 30 },
+            { name: 'Doe' }
+        ];
+        
+        console.log(getAllPropValues(arr, 'name'));
+        console.log(getAllPropValues(arr, 'age'));
+
+        function calculateTotalPrice(allProducts, productName) {
+          const product = allProducts.find(product => product.name === productName);
+          if (product) {
+              return product.price * product.quantity;
+          } else {
+              return 0;
+          }
+      }
+      
+
+      const allProducts = [
+          { name: 'apple', price: 1, quantity: 10 },
+          { name: 'banana', price: 2, quantity: 5 },
+          { name: 'orange', price: 3, quantity: 3 }
+      ];
+      
+      console.log(calculateTotalPrice(allProducts, 'banana'));
+      console.log(calculateTotalPrice(allProducts, 'orange'));
+      console.log(calculateTotalPrice(allProducts, 'grape'));
