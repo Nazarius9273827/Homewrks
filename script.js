@@ -110,135 +110,166 @@
 // let stringInteger = integerNumber.toString();
 // console.log(`Ціле число перетворене у рядок: ${stringInteger}`);
 
-        // // Task 1: Drink Selection
-        // let answer = prompt("Select drink");
-        // switch (answer) {
-        //   case "Coffee":
-        //     console.log("You selected coffee");
-        //     break;
-        //   case "Tea":
-        //     console.log("You selected tea");
-        //     break;
-        //   case "Juice":
-        //     console.log("You selected juice");
-        //     break;
-        //   default:
-        //     console.log("You selected nothing");
-        // }
+// // Task 1: Drink Selection
+// let answer = prompt("Select drink");
+// switch (answer) {
+//   case "Coffee":
+//     console.log("You selected coffee");
+//     break;
+//   case "Tea":
+//     console.log("You selected tea");
+//     break;
+//   case "Juice":
+//     console.log("You selected juice");
+//     break;
+//   default:
+//     console.log("You selected nothing");
+// }
 
 
-        // // Task 2: Day Check
-        // let day = prompt("Select day");
-        // switch (day) {
-        //     case "Monday":
-        //     case "Tuesday":
-        //     case "Wednesday":
-        //     case "Thursday":
-        //     case "Friday":
-        //       console.log("It's a working day.");
-        //       break;
-        //     case "Saturday":
-        //     case "Sunday":
-        //       console.log("It's a weekend!");
-        //       break;
-        //     default:
-        //       console.log("Invalid input!");
-        //   }
+// // Task 2: Day Check
+// let day = prompt("Select day");
+// switch (day) {
+//     case "Monday":
+//     case "Tuesday":
+//     case "Wednesday":
+//     case "Thursday":
+//     case "Friday":
+//       console.log("It's a working day.");
+//       break;
+//     case "Saturday":
+//     case "Sunday":
+//       console.log("It's a weekend!");
+//       break;
+//     default:
+//       console.log("Invalid input!");
+//   }
 
-        // // // Task 3: Season Check
-        // let numberOfmonth = prompt("Select number of month");
-        // switch (numberOfmonth) {
-        //     case "12":
-        //     case "1":
-        //     case "2":
-        //       console.log("Winter");
-        //       break;
-        //     case "3":
-        //     case "4":
-        //     case "5":
-        //       console.log("Spring");
-        //       break;
-        //     case "6":
-        //     case "7":
-        //     case "8":
-        //       console.log("Summer");
-        //       break;
-        //     case "9":
-        //     case "10":
-        //     case "11":
-        //       console.log("Autumn");
-        //       break;
-        //     default:
-        //       console.log("Invalid input!");
-        //   }
-
-
-
-        // // // Task 4: Number of Days
-        // let monthNumber = prompt("Select number of month");
-        // switch (monthNumber) {
-        //     case "1":
-        //     case "3":
-        //     case "5":
-        //     case "7":
-        //     case "8":
-        //     case "10":
-        //     case "12":
-        //       console.log("31 day");
-        //       break;
-        //     case "4":
-        //     case "6":
-        //     case "9":
-        //     case "11":
-        //       console.log("30 days");
-        //       break;
-        //     case "2":
-        //       console.log("28 or 29 days");
-        //       break;
-        //     default:
-        //       console.log("Invalid input!");
-        //   }
+// // // Task 3: Season Check
+// let numberOfmonth = prompt("Select number of month");
+// switch (numberOfmonth) {
+//     case "12":
+//     case "1":
+//     case "2":
+//       console.log("Winter");
+//       break;
+//     case "3":
+//     case "4":
+//     case "5":
+//       console.log("Spring");
+//       break;
+//     case "6":
+//     case "7":
+//     case "8":
+//       console.log("Summer");
+//       break;
+//     case "9":
+//     case "10":
+//     case "11":
+//       console.log("Autumn");
+//       break;
+//     default:
+//       console.log("Invalid input!");
+//   }
 
 
-        // // // Task 5: Traffic Light Action
-        // let color = prompt("Select color");
-        // switch (color) {
-        //     case "Red":
-        //       console.log("Stop!");
-        //       break;
-        //     case "Yellow":
-        //       console.log("Wait!");
-        //       break;
-        //     case "Green":
-        //       console.log("Go!");
-        //       break;
-        //     default:
-        //       console.log("Invalid input!");
-        //   }
 
-        // Task 6: Calculator
-        let firstOperationNumber = prompt("Select first number");
-        let operationSign = prompt("Select operation sign");
-        let secondOperationNumber = prompt("Select second number");
+// // // Task 4: Number of Days
+// let monthNumber = prompt("Select number of month");
+// switch (monthNumber) {
+//     case "1":
+//     case "3":
+//     case "5":
+//     case "7":
+//     case "8":
+//     case "10":
+//     case "12":
+//       console.log("31 day");
+//       break;
+//     case "4":
+//     case "6":
+//     case "9":
+//     case "11":
+//       console.log("30 days");
+//       break;
+//     case "2":
+//       console.log("28 or 29 days");
+//       break;
+//     default:
+//       console.log("Invalid input!");
+//   }
 
-            let output;
-            switch (operationSign) {
-                case '+':
-                    console.log(Number(firstOperationNumber) + Number(secondOperationNumber));
-                    break;
-                case '-':
-                  console.log(Number(firstOperationNumber) - Number(secondOperationNumber));
-                    break;
-                case '*':
-                  console.log(Number(firstOperationNumber) * Number(secondOperationNumber));
-                    break;
-                case '/':
-                    if (secondOperationNumber === 0) {
-                        console.log("Error! Division by zero.");
-                    } else {
-                      console.log(Number(firstOperationNumber) / Number(secondOperationNumber));
-                    }
-                    break;
-                default:
-                    console.log("Invalid operation!");
-            }
+
+// // // Task 5: Traffic Light Action
+// let color = prompt("Select color");
+// switch (color) {
+//     case "Red":
+//       console.log("Stop!");
+//       break;
+//     case "Yellow":
+//       console.log("Wait!");
+//       break;
+//     case "Green":
+//       console.log("Go!");
+//       break;
+//     default:
+//       console.log("Invalid input!");
+//   }
+
+// Task 6: Calculator
+// let firstOperationNumber = prompt("Select first number");
+// let operationSign = prompt("Select operation sign");
+// let secondOperationNumber = prompt("Select second number");
+
+//     let output;
+//     switch (operationSign) {
+//         case '+':
+//             console.log(Number(firstOperationNumber) + Number(secondOperationNumber));
+//             break;
+//         case '-':
+//           console.log(Number(firstOperationNumber) - Number(secondOperationNumber));
+//             break;
+//         case '*':
+//           console.log(Number(firstOperationNumber) * Number(secondOperationNumber));
+//             break;
+//         case '/':
+//             if (secondOperationNumber === 0) {
+//                 console.log("Error! Division by zero.");
+//             } else {
+//               console.log(Number(firstOperationNumber) / Number(secondOperationNumber));
+//             }
+//             break;
+//         default:
+//             console.log("Invalid operation!");
+//     }
+
+const users = [
+  {
+    name: "Alice",
+    balance: 1500,
+    friends: ["Bob", "Charlie"],
+    skills: ["JavaScript", "HTML", "CSS"]
+  },
+  {
+    name: "Bob",
+    balance: 2500,
+    friends: ["Alice", "Eve"],
+    skills: ["Python", "Django", "JavaScript"]
+  },
+  {
+    name: "Charlie",
+    balance: 3000,
+    friends: ["Alice", "Bob"],
+    skills: ["Java", "Spring", "HTML"]
+  }
+];
+
+const totalBalance = users.reduce((sum, user) => sum + user.balance, 0);
+console.log(totalBalance);
+
+const friendName = "Alice";
+const usersWithFriend = users
+  .filter(user => user.friends.includes(friendName))
+  .map(user => user.name);
+
+console.log(usersWithFriend);
