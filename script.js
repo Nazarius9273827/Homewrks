@@ -243,37 +243,40 @@
 //             console.log("Invalid operation!");
 //     }
 
-let user = {
-  name: 'Nazar',
-  hobby: 'IT',
-  premium: true
+const user = {
+  name: 'Mango',
+  age: 20,
+  hobby: 'html',
+  premium: true,
 };
 
-user.mood = 'happy';
-user.hobby = 'skydiving';
-user.premium = false;
+const updatedUser = {
+  ...user,
+  mood: 'happy',
+  hobby: 'skydiving',
+  premium: false,
+};
 
-for (const key of Object.keys(user)) {
-  const { [key]: value } = user;
-  console.log(`${key}: ${value}`);
+
+for (const key of Object.keys(updatedUser)) {
+  console.log(`${key}: ${updatedUser[key]}`);
 }
 
-function countProps(obj) {
+const countProps = function (obj) {
   return Object.keys(obj).length;
-}
-
-const exampleObject = {
-  name: 'Alice',
-  age: 25,
-  city: 'New York'
 };
 
-console.log(countProps(exampleObject));
-function findBestEmployee(employees) {
-  let maxTasks = 0;
-  let bestEmployee = '';
+console.log(countProps({}));
+console.log(countProps({ name: 'Mango', age: 2 }));
+console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 }));
 
-  for (const [name, tasks] of Object.entries(employees)) {
+const findBestEmployee = function (employees) {
+  const entries = Object.entries(employees);
+  
+  let bestEmployee = '';
+  let maxTasks = 0;
+
+  for (const [name, tasks] of entries) {
     if (tasks > maxTasks) {
       maxTasks = tasks;
       bestEmployee = name;
@@ -281,126 +284,93 @@ function findBestEmployee(employees) {
   }
 
   return bestEmployee;
-}
-
-const employees = {
-  John: 5,
-  Alice: 10,
-  Bob: 7
 };
 
-console.log(findBestEmployee(employees));
+console.log(findBestEmployee({ ann: 29, david: 35, helen: 1, lorence: 99 }));
+console.log(findBestEmployee({ poly: 12, mango: 17, ajax: 4 }));
+console.log(findBestEmployee({ lux: 147, david: 21, kiwi: 19, chelsy: 38 }));
 
-function countTotalSalary(employees) {
-  let totalSalary = 0;
-
-  for (const salary of Object.values(employees)) {
-    totalSalary += salary;
-  }
-
-  return totalSalary;
-}
-
-const salaries = {
-  John: 3000,
-  Alice: 4000,
-  Bob: 2500
+const countTotalSalary = function (employees) {
+  const salaries = Object.values(employees);
+  return salaries.reduce((total, salary) => total + salary, 0);
 };
 
-console.log(countTotalSalary(salaries));
+// Тести
+console.log(countTotalSalary({}));
+console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
+console.log(countTotalSalary({ kiwi: 200, lux: 50, chelsy: 150 }));
 
-function getAllPropValues(arr, prop) {
-  return arr
-    .map(item => {
-      const { [prop]: value } = item;
-      return value;
-    })
-    .filter(value => value !== undefined);
-}
+const getAllPropValues = function (arr, prop) {
+  return arr.map(item => item[prop] !== undefined ? item[prop] : []);
+};
 
-const products = [
-  { name: 'apple', price: 30 },
-  { name: 'banana', price: 20 },
-  { name: 'cherry', price: 40 }
-];
+// const products = [
+//   { name: 'Радар', price: 1300, quantity: 4 },
+//   { name: 'Сканер', price: 2700, quantity: 3 },
+//   { name: 'Дроїд', price: 400, quantity: 7 },
+//   { name: 'Захоплення', price: 1200, quantity: 2 },
+// ];
 
-console.log(getAllPropValues(products, 'price'));
+// console.log(getAllPropValues(products, 'name')); // ['Радар', 'Сканер', 'Дроїд', 'Захоплення']
+// console.log(getAllPropValues(products, 'quantity')); // [4, 3, 7, 2]
+// console.log(getAllPropValues(products, 'category')); // []
 
-function calculateTotalPrice(allProducts, productName) {
-  let totalPrice = 0;
+// const calculateTotalPrice = function (allProdcuts, productName) {
+//   const product = allProdcuts.find(({ name }) => name === productName);
+//   return product ? product.price * product.quantity : 0;
+// };
 
-  for (const product of allProducts) {
-    const { name, price, quantity } = product;
-    if (name === productName) {
-      totalPrice += price * quantity;
-    }
-  }
+// // Тести
+// const products = [
+//   { name: 'Радар', price: 1300, quantity: 4 },
+//   { name: 'Сканер', price: 2700, quantity: 3 },
+//   { name: 'Дроїд', price: 400, quantity: 7 },
+//   { name: 'Захоплення', price: 1200, quantity: 2 },
+// ];
 
-  return totalPrice;
-}
+// console.log(calculateTotalPrice(products, 'Радар')); // 5200
+// console.log(calculateTotalPrice(products, 'Дроїд')); // 2800
 
-const allProducts = [
-  { name: 'apple', price: 30, quantity: 5 },
-  { name: 'banana', price: 20, quantity: 10 },
-  { name: 'apple', price: 30, quantity: 3 }
-];
-
-console.log(calculateTotalPrice(allProducts, 'apple'));
+const Transaction = {
+  DEPOSIT: 'deposit',
+  WITHDRAW: 'withdraw',
+};
 
 const account = {
   balance: 0,
-  transactionHistory: [],
+  transactions: [],
+
+  createTransaction(amount, type) {
+    return { id: Date.now(), type, amount };
+  },
 
   deposit(amount) {
-    if (amount <= 0) {
-      console.log('Сума депозиту повинна бути позитивною.');
-      return;
-    }
-
+    const transaction = this.createTransaction(amount, Transaction.DEPOSIT);
     this.balance += amount;
-    this.transactionHistory.push({ type: 'deposit', amount });
-    console.log(`Внесено ${amount}. Новий баланс: ${this.balance}.`);
+    this.transactions.push(transaction);
   },
 
   withdraw(amount) {
-    if (amount <= 0) {
-      console.log('Сума зняття повинна бути позитивною.');
-      return;
-    }
-
     if (amount > this.balance) {
-      console.log('Недостатньо коштів для зняття.');
+      console.log('Недостатньо коштів');
       return;
     }
-
+    const transaction = this.createTransaction(amount, Transaction.WITHDRAW);
     this.balance -= amount;
-    this.transactionHistory.push({ type: 'withdrawal', amount });
-    console.log(`Знято ${amount}. Новий баланс: ${this.balance}.`);
+    this.transactions.push(transaction);
   },
 
   getBalance() {
-    console.log(`Поточний баланс: ${this.balance}.`);
     return this.balance;
   },
 
-  getTransactionHistory() {
-    if (this.transactionHistory.length === 0) {
-      console.log('Історія транзакцій пуста.');
-      return [];
-    }
+  getTransactionDetails(id) {
+    return this.transactions.find(transaction => transaction.id === id);
+  },
 
-    console.log('Історія транзакцій:');
-    this.transactionHistory.forEach((transaction, index) => {
-      console.log(`${index + 1}. ${transaction.type} на ${transaction.amount}`);
-    });
-    return this.transactionHistory;
-  }
+  getTransactionTotal(type) {
+    return this.transactions
+      .filter(transaction => transaction.type === type)
+      .reduce((total, transaction) => total + transaction.amount, 0);
+  },
 };
-
-account.deposit(1000);
-account.withdraw(500);
-account.getBalance();
-account.getTransactionHistory();
-// Історія транзакцій:
-// 1. deposit на 1000
-// 2. withdrawal на 500
