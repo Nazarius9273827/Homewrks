@@ -110,176 +110,242 @@
 // let stringInteger = integerNumber.toString();
 // console.log(`Ціле число перетворене у рядок: ${stringInteger}`);
 
-        // // Task 1: Drink Selection
-        // let answer = prompt("Select drink");
-        // switch (answer) {
-        //   case "Coffee":
-        //     console.log("You selected coffee");
-        //     break;
-        //   case "Tea":
-        //     console.log("You selected tea");
-        //     break;
-        //   case "Juice":
-        //     console.log("You selected juice");
-        //     break;
-        //   default:
-        //     console.log("You selected nothing");
-        // }
+// // Task 1: Drink Selection
+// let answer = prompt("Select drink");
+// switch (answer) {
+//   case "Coffee":
+//     console.log("You selected coffee");
+//     break;
+//   case "Tea":
+//     console.log("You selected tea");
+//     break;
+//   case "Juice":
+//     console.log("You selected juice");
+//     break;
+//   default:
+//     console.log("You selected nothing");
+// }
 
 
-        // // Task 2: Day Check
-        // let day = prompt("Select day");
-        // switch (day) {
-        //     case "Monday":
-        //     case "Tuesday":
-        //     case "Wednesday":
-        //     case "Thursday":
-        //     case "Friday":
-        //       console.log("It's a working day.");
-        //       break;
-        //     case "Saturday":
-        //     case "Sunday":
-        //       console.log("It's a weekend!");
-        //       break;
-        //     default:
-        //       console.log("Invalid input!");
-        //   }
+// // Task 2: Day Check
+// let day = prompt("Select day");
+// switch (day) {
+//     case "Monday":
+//     case "Tuesday":
+//     case "Wednesday":
+//     case "Thursday":
+//     case "Friday":
+//       console.log("It's a working day.");
+//       break;
+//     case "Saturday":
+//     case "Sunday":
+//       console.log("It's a weekend!");
+//       break;
+//     default:
+//       console.log("Invalid input!");
+//   }
 
-        // // // Task 3: Season Check
-        // let numberOfmonth = prompt("Select number of month");
-        // switch (numberOfmonth) {
-        //     case "12":
-        //     case "1":
-        //     case "2":
-        //       console.log("Winter");
-        //       break;
-        //     case "3":
-        //     case "4":
-        //     case "5":
-        //       console.log("Spring");
-        //       break;
-        //     case "6":
-        //     case "7":
-        //     case "8":
-        //       console.log("Summer");
-        //       break;
-        //     case "9":
-        //     case "10":
-        //     case "11":
-        //       console.log("Autumn");
-        //       break;
-        //     default:
-        //       console.log("Invalid input!");
-        //   }
-
-
-
-        // // // Task 4: Number of Days
-        // let monthNumber = prompt("Select number of month");
-        // switch (monthNumber) {
-        //     case "1":
-        //     case "3":
-        //     case "5":
-        //     case "7":
-        //     case "8":
-        //     case "10":
-        //     case "12":
-        //       console.log("31 day");
-        //       break;
-        //     case "4":
-        //     case "6":
-        //     case "9":
-        //     case "11":
-        //       console.log("30 days");
-        //       break;
-        //     case "2":
-        //       console.log("28 or 29 days");
-        //       break;
-        //     default:
-        //       console.log("Invalid input!");
-        //   }
+// // // Task 3: Season Check
+// let numberOfmonth = prompt("Select number of month");
+// switch (numberOfmonth) {
+//     case "12":
+//     case "1":
+//     case "2":
+//       console.log("Winter");
+//       break;
+//     case "3":
+//     case "4":
+//     case "5":
+//       console.log("Spring");
+//       break;
+//     case "6":
+//     case "7":
+//     case "8":
+//       console.log("Summer");
+//       break;
+//     case "9":
+//     case "10":
+//     case "11":
+//       console.log("Autumn");
+//       break;
+//     default:
+//       console.log("Invalid input!");
+//   }
 
 
-        // // // Task 5: Traffic Light Action
-        // let color = prompt("Select color");
-        // switch (color) {
-        //     case "Red":
-        //       console.log("Stop!");
-        //       break;
-        //     case "Yellow":
-        //       console.log("Wait!");
-        //       break;
-        //     case "Green":
-        //       console.log("Go!");
-        //       break;
-        //     default:
-        //       console.log("Invalid input!");
-        //   }
 
-        // Task 6: Calculator
-        // let firstOperationNumber = prompt("Select first number");
-        // let operationSign = prompt("Select operation sign");
-        // let secondOperationNumber = prompt("Select second number");
+// // // Task 4: Number of Days
+// let monthNumber = prompt("Select number of month");
+// switch (monthNumber) {
+//     case "1":
+//     case "3":
+//     case "5":
+//     case "7":
+//     case "8":
+//     case "10":
+//     case "12":
+//       console.log("31 day");
+//       break;
+//     case "4":
+//     case "6":
+//     case "9":
+//     case "11":
+//       console.log("30 days");
+//       break;
+//     case "2":
+//       console.log("28 or 29 days");
+//       break;
+//     default:
+//       console.log("Invalid input!");
+//   }
 
-        //     let output;
-        //     switch (operationSign) {
-        //         case '+':
-        //             console.log(Number(firstOperationNumber) + Number(secondOperationNumber));
-        //             break;
-        //         case '-':
-        //           console.log(Number(firstOperationNumber) - Number(secondOperationNumber));
-        //             break;
-        //         case '*':
-        //           console.log(Number(firstOperationNumber) * Number(secondOperationNumber));
-        //             break;
-        //         case '/':
-        //             if (secondOperationNumber === 0) {
-        //                 console.log("Error! Division by zero.");
-        //             } else {
-        //               console.log(Number(firstOperationNumber) / Number(secondOperationNumber));
-        //             }
-        //             break;
-        //         default:
-        //             console.log("Invalid operation!");
-        //     }
 
-            const users = [
-              { id: 1, name: 'John Doe', age: 25, eyeColor: 'blue', gender: 'male', isActive: true, email: 'john.doe@example.com' },
-              { id: 2, name: 'Jane Smith', age: 30, eyeColor: 'green', gender: 'female', isActive: false, email: 'jane.smith@example.com' },
-              { id: 3, name: 'Alice Johnson', age: 28, eyeColor: 'brown', gender: 'female', isActive: true, email: 'alice.johnson@example.com' },
-              { id: 4, name: 'Bob Brown', age: 22, eyeColor: 'blue', gender: 'male', isActive: false, email: 'bob.brown@example.com' }
-            ];
-            
-            const userNames = users.map(user => user.name);
-            console.log(userNames);
+// // // Task 5: Traffic Light Action
+// let color = prompt("Select color");
+// switch (color) {
+//     case "Red":
+//       console.log("Stop!");
+//       break;
+//     case "Yellow":
+//       console.log("Wait!");
+//       break;
+//     case "Green":
+//       console.log("Go!");
+//       break;
+//     default:
+//       console.log("Invalid input!");
+//   }
 
-            function getUsersByEyeColor(users, color) {
-              return users.filter(user => user.eyeColor === color);
-            }
-            
-            const usersWithBlueEyes = getUsersByEyeColor(users, 'blue');
-            console.log(usersWithBlueEyes);
-            
-            function getUserNamesByGender(users, gender) {
-              return users.filter(user => user.gender === gender).map(user => user.name);
-            }
-            
-            const maleUserNames = getUserNamesByGender(users, 'male');
-            console.log(maleUserNames);
+// Task 6: Calculator
+// let firstOperationNumber = prompt("Select first number");
+// let operationSign = prompt("Select operation sign");
+// let secondOperationNumber = prompt("Select second number");
 
-            const inactiveUsers = users.filter(user => !user.isActive);
-            console.log(inactiveUsers);
+//     let output;
+//     switch (operationSign) {
+//         case '+':
+//             console.log(Number(firstOperationNumber) + Number(secondOperationNumber));
+//             break;
+//         case '-':
+//           console.log(Number(firstOperationNumber) - Number(secondOperationNumber));
+//             break;
+//         case '*':
+//           console.log(Number(firstOperationNumber) * Number(secondOperationNumber));
+//             break;
+//         case '/':
+//             if (secondOperationNumber === 0) {
+//                 console.log("Error! Division by zero.");
+//             } else {
+//               console.log(Number(firstOperationNumber) / Number(secondOperationNumber));
+//             }
+//             break;
+//         default:
+//             console.log("Invalid operation!");
+//     }
 
-            function getUserByEmail(users, email) {
-              return users.find(user => user.email === email);
-            }
-            
-            const userByEmail = getUserByEmail(users, 'alice.johnson@example.com');
-            console.log(userByEmail);
+// const users = [
+//   { id: 1, name: 'John Doe', age: 25, eyeColor: 'blue', gender: 'male', isActive: true, email: 'john.doe@example.com' },
+//   { id: 2, name: 'Jane Smith', age: 30, eyeColor: 'green', gender: 'female', isActive: false, email: 'jane.smith@example.com' },
+//   { id: 3, name: 'Alice Johnson', age: 28, eyeColor: 'brown', gender: 'female', isActive: true, email: 'alice.johnson@example.com' },
+//   { id: 4, name: 'Bob Brown', age: 22, eyeColor: 'blue', gender: 'male', isActive: false, email: 'bob.brown@example.com' }
+// ];
 
-            function getUsersByAgeRange(users, min, max) {
-              return users.filter(user => user.age >= min && user.age <= max);
-            }
-            
-            const usersInAgeRange = getUsersByAgeRange(users, 25, 30);
-            console.log(usersInAgeRange);
+// const userNames = users.map(user => user.name);
+// console.log(userNames);
+
+// function getUsersByEyeColor(users, color) {
+//   return users.filter(user => user.eyeColor === color);
+// }
+
+// const usersWithBlueEyes = getUsersByEyeColor(users, 'blue');
+// console.log(usersWithBlueEyes);
+
+// function getUserNamesByGender(users, gender) {
+//   return users.filter(user => user.gender === gender).map(user => user.name);
+// }
+
+// const maleUserNames = getUserNamesByGender(users, 'male');
+// console.log(maleUserNames);
+
+// const inactiveUsers = users.filter(user => !user.isActive);
+// console.log(inactiveUsers);
+
+// function getUserByEmail(users, email) {
+//   return users.find(user => user.email === email);
+// }
+
+// const userByEmail = getUserByEmail(users, 'alice.johnson@example.com');
+// console.log(userByEmail);
+
+// function getUsersByAgeRange(users, min, max) {
+//   return users.filter(user => user.age >= min && user.age <= max);
+// }
+
+// const usersInAgeRange = getUsersByAgeRange(users, 25, 30);
+// console.log(usersInAgeRange);
+
+function checkFields() {
+  let value1 = prompt("Введіть перше значення:");
+  let value2 = prompt("Введіть друге значення:");
+
+  if (value1 && value2) {
+    alert("Обидва поля заповнені");
+  } else {
+    alert("Не всі поля заповнені");
+  }
+}
+
+function checkSum() {
+  let value1 = parseFloat(prompt("Введіть перше число:"));
+  let value2 = parseFloat(prompt("Введіть друге число:"));
+
+  if (!isNaN(value1) && !isNaN(value2)) {
+    if (value1 + value2 > 10) {
+      alert("Сума більша за 10");
+    } else {
+      alert("Сума менша або дорівнює 10");
+    }
+  } else {
+    alert("Будь ласка, введіть числові значення");
+  }
+}
+
+function checkJavaScript() {
+  let text = prompt("Введіть текст:");
+
+  if (text.includes("JavaScript")) {
+    alert("Текст містить слово JavaScript");
+  } else {
+    alert("Текст не містить слово JavaScript");
+  }
+}
+
+function checkNumberRange() {
+  let value = parseFloat(prompt("Введіть число:"));
+
+  if (!isNaN(value)) {
+    if (value > 10 && value < 20) {
+      alert("Число входить в діапазон від 10 до 20");
+    } else {
+      alert("Число не входить в діапазон від 10 до 20");
+    }
+  } else {
+    alert("Будь ласка, введіть числове значення");
+  }
+}
+
+function checkUserData() {
+  let name = prompt("Введіть ім'я:");
+  let email = prompt("Введіть email:");
+  let password = prompt("Введіть пароль:");
+
+  let nameValid = name.length >= 3;
+  let emailValid = email.includes("@") && email.indexOf(".", email.indexOf("@")) > email.indexOf("@");
+  let passwordValid = password.length >= 6;
+
+  if (nameValid && emailValid && passwordValid) {
+    alert("Коректно заповнені дані");
+  } else {
+    alert("Помилка в заповненні даних. Перевірте введені значення.");
+  }
+}
