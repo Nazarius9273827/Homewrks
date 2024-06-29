@@ -1,137 +1,150 @@
-// Змінні з власними значеннями
-var age = 15;
-var name = "Nazar";
-var isStudent = false;
-var myString = "Це моя улюблена цитата: 'Ваше серце - це скарб; утратите його - і ви злидень' - Оноре де Балзак";
-var myNumber = 36;
-myNumber += 10;
-var myNull = null;
+// // Змінні з власними значеннями
+// var age = 15;
+// var name = "Nazar";
+// var isStudent = false;
+// var myString = "Це моя улюблена цитата: 'Ваше серце - це скарб; утратите його - і ви злидень' - Оноре де Балзак";
+// var myNumber = 36;
+// myNumber += 10;
+// var myNull = null;
 
-// Виведення значень в консоль
-console.log("Age:", age);
-console.log("Name:", name);
-console.log("Is Student:", isStudent);
-console.log("My String:", myString);
-console.log("My Number:", myNumber);
-console.log("My Null:", myNull);
+// // // Виведення значень в консоль
+// // console.log("Age:", age);
+// // console.log("Name:", name);
+// // console.log("Is Student:", isStudent);
+// // console.log("My String:", myString);
+// // console.log("My Number:", myNumber);
+// // console.log("My Null:", myNull);
 
-// Спливаюче вікно prompt()
-var userName = prompt("Будь ласка, введіть ваше ім'я:");
-alert("Привіт, " + userName + "!");
+// // Спливаюче вікно prompt()
+// var userName = prompt("Будь ласка, введіть ваше ім'я:");
+// alert("Привіт, " + userName + "!");
 
-// Спливаюче підтвердження confirm()
-var confirmation = confirm("Натисніть OK, якщо ви погоджуєтесь з виконанням дії:");
-if (confirmation) {
-    alert("Дякую за підтвердження!");
-} else {
-    alert("Дію відмінено!");
+// // Спливаюче підтвердження confirm()
+// var confirmation = confirm("Натисніть OK, якщо ви погоджуєтесь з виконанням дії:");
+// if (confirmation) {
+//     alert("Дякую за підтвердження!");
+// } else {
+//     alert("Дію відмінено!");
+// }
+
+// // Спливаюче попередження alert() з підтвердженням confirm()
+// alert("Увага! Дія небезпечна!");
+// var dangerConfirmation = confirm("Натисніть OK, якщо ви погоджуєтесь з виконанням дії:");
+// if (dangerConfirmation) {
+//     alert("Дякую за підтвердження!");
+// } else {
+//     alert("Дію відмінено!");
+// }
+
+// // Виведення результату в консоль та перевірка типу змінної
+// let result = 5 + 5 + "5";
+// console.log(result); // Виведе "105"
+// console.log(typeof result); // Виведе "string"
+
+// // Перевірка електронної адреси та підрахунок символів зі змінної email
+// let email = "example@example.com";
+// let containsAtSymbol = email.includes("@");
+// let emailLength = email.length;
+// console.log(`Електронна адреса містить символ @: ${containsAtSymbol}`);
+// console.log(`Загальна кількість символів в електронній адресі: ${emailLength}`);
+
+// // // Поєднання слів в змінну fullName та додавання "Viktor"
+// // let my = "My";
+// // let name = "name";
+// // let is = "is";
+// // let fullName = `${my} ${name} ${is} Viktor`;
+// // console.log(fullName);
+
+// // // Виведення повідомлення про сплату через alert
+// // let userName = "Олександре";
+// // let payment = 300;
+// // alert(`Дякуємо, ${userName}! До сплати ${payment} гривень`);
+// // // Змінні для температур
+// // let celsiusTemperature = 25;
+// // let fahrenheitTemperature = (celsiusTemperature * 9/5) + 32;
+// // console.log(`Температура у Фаренгейтах: ${fahrenheitTemperature}°F`);
+
+// // Змінна для кількості днів у місяці
+// let daysInMonth = 30;
+// let hoursInMonth = daysInMonth * 24;
+// let minutesInMonth = hoursInMonth * 60;
+// console.log(`Кількість годин у місяці: ${hoursInMonth}, кількість хвилин у місяці: ${minutesInMonth}`);
+
+// // Змінні для рівня здоров'я та енергії гравця
+// let health = 80;
+// let energy = 90;
+// health -= 20;
+// energy -= 30;
+// console.log(`Рівень здоров'я гравця: ${health}, рівень енергії гравця: ${energy}`);
+
+// // Змінна для суми покупки в магазині
+// let purchaseAmount = 1000;
+// let discountedAmount = purchaseAmount * 0.1;
+// let finalAmount = purchaseAmount - discountedAmount;
+// console.log(`Сума зі знижкою: ${finalAmount}`);
+
+// // Змінна для числа з плаваючою комою
+// let floatingNumber = 10.567;
+// console.log(`Округлене число: ${Math.floor(floatingNumber)}`);
+
+// // Змінна для рядка з числом з плаваючою комою
+// let floatString = "15.qwerty789";
+// let parsedFloat = parseFloat(floatString);
+// console.log(`Число з рядка з плаваючою комою: ${parsedFloat}`);
+
+// // Змінна для рядка з цілим числом
+// let intString = "25qwerty";
+// let parsedInt = parseInt(intString);
+// console.log(`Ціле число з рядка: ${parsedInt}`);
+
+// // Змінна для числа
+// let number = 64;
+// let squareRoot = Math.sqrt(number);
+// console.log(`Квадратний корінь числа: ${squareRoot}`);
+
+// // Змінні для цілочисельного значення та рядка з числом у вигляді рядка
+// let integerNumber = 42;
+// let stringNumber = "100";
+// let parsedInteger = parseInt(stringNumber);
+// console.log(`Рядок перетворений у ціле число: ${parsedInteger}`);
+// let stringInteger = integerNumber.toString();
+// console.log(`Ціле число перетворене у рядок: ${stringInteger}`);
+
+
+let a = 1;
+while (a <= 10) {
+    console.log(a);
+    a++;
 }
 
-// Спливаюче попередження alert() з підтвердженням confirm()
-alert("Увага! Дія небезпечна!");
-var dangerConfirmation = confirm("Натисніть OK, якщо ви погоджуєтесь з виконанням дії:");
-if (dangerConfirmation) {
-    alert("Дякую за підтвердження!");
-} else {
-    alert("Дію відмінено!");
+for (let i = 2; i <= 20; i++) {
+    if (i % 2 !== 0) {
+        continue; // Пропустити непарні числа
+    }
+    console.log(i);
 }
 
-// Виведення результату в консоль та перевірка типу змінної
-let result = 5 + 5 + "5";
-console.log(result); // Виведе "105"
-console.log(typeof result); // Виведе "string"
+const number = 7;
+for (let i = 1; i <= 10; i++) {
+    console.log(`${number} x ${i} = ${number * i}`);
+}
 
-// Перевірка електронної адреси та підрахунок символів зі змінної email
-let email = "example@example.com";
-let containsAtSymbol = email.includes("@");
-let emailLength = email.length;
-console.log(`Електронна адреса містить символ @: ${containsAtSymbol}`);
-console.log(`Загальна кількість символів в електронній адресі: ${emailLength}`);
-
-// Поєднання слів в змінну fullName та додавання "Viktor"
-let my = "My";
-let name = "name";
-let is = "is";
-let fullName = `${my} ${name} ${is} Viktor`;
-console.log(fullName);
-
-// Виведення повідомлення про сплату через alert
-let userName = "Олександре";
-let payment = 300;
-alert(`Дякуємо, ${userName}! До сплати ${payment} гривень`);
-// Змінні для температур
-let celsiusTemperature = 25;
-let fahrenheitTemperature = (celsiusTemperature * 9/5) + 32;
-console.log(`Температура у Фаренгейтах: ${fahrenheitTemperature}°F`);
-
-// Змінна для кількості днів у місяці
-let daysInMonth = 30;
-let hoursInMonth = daysInMonth * 24;
-let minutesInMonth = hoursInMonth * 60;
-console.log(`Кількість годин у місяці: ${hoursInMonth}, кількість хвилин у місяці: ${minutesInMonth}`);
-
-// Змінні для рівня здоров'я та енергії гравця
-let health = 80;
-let energy = 90;
-health -= 20;
-energy -= 30;
-console.log(`Рівень здоров'я гравця: ${health}, рівень енергії гравця: ${energy}`);
-
-// Змінна для суми покупки в магазині
-let purchaseAmount = 1000;
-let discountedAmount = purchaseAmount * 0.1;
-let finalAmount = purchaseAmount - discountedAmount;
-console.log(`Сума зі знижкою: ${finalAmount}`);
-
-// Змінна для числа з плаваючою комою
-let floatingNumber = 10.567;
-console.log(`Округлене число: ${Math.floor(floatingNumber)}`);
-
-// Змінна для рядка з числом з плаваючою комою
-let floatString = "15.qwerty789";
-let parsedFloat = parseFloat(floatString);
-console.log(`Число з рядка з плаваючою комою: ${parsedFloat}`);
-
-// Змінна для рядка з цілим числом
-let intString = "25qwerty";
-let parsedInt = parseInt(intString);
-console.log(`Ціле число з рядка: ${parsedInt}`);
-
-// Змінна для числа
-let number = 64;
-let squareRoot = Math.sqrt(number);
-console.log(`Квадратний корінь числа: ${squareRoot}`);
-
-// Змінні для цілочисельного значення та рядка з числом у вигляді рядка
-let integerNumber = 42;
-let stringNumber = "100";
-let parsedInteger = parseInt(stringNumber);
-console.log(`Рядок перетворений у ціле число: ${parsedInteger}`);
-let stringInteger = integerNumber.toString();
-console.log(`Ціле число перетворене у рядок: ${stringInteger}`);
-
-
+const n = 10; // Встановіть значення n за вашим вибором
 let i = 1;
-while (i <= 10) {
-  console.log(i);
-  i++;
+while (true) {
+    if (i >= n) {
+        break; // Закінчити цикл, якщо число >= n
+    }
+    console.log(i);
+    i++;
 }
 
-for (let j = 2; j <= 20; j += 2) {
-  console.log(j);
-}
-
-const multiplier = 7;
-for (let k = 1; k <= 10; k++) {
-  console.log(`${multiplier} * ${k} = ${multiplier * k}`);
-}
-
-let l = 1;
-while (l <= 20) {
-  if (l % 3 === 0) {
-    l++;
-    continue;
-  }
-  console.log(l);
-  l++;
+let b = 1;
+while (b <= 20) {
+    if (b % 3 === 0) {
+        b++;
+        continue; // Пропустити числа, кратні 3
+    }
+    console.log(b);
+    b++;
 }
