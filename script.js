@@ -110,50 +110,73 @@ console.log(`Рядок перетворений у ціле число: ${parse
 let stringInteger = integerNumber.toString();
 console.log(`Ціле число перетворене у рядок: ${stringInteger}`);
 
-// Task 1
-// for
-const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
-let string = '';
+// const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+// let string = '';
 
-for (let i = 0; i < friends.length; i++) {
-  string += friends[i];
-  if (i !== friends.length - 1) {
-    string += ', ';
-  }
-}
+// for (let i = 0; i < friends.length; i++) {
+//     string += friends[i];
+//     if (i < friends.length - 1) {
+//         string += ', ';
+//     }
+// }
+
+// console.log(string);
+
+const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+
+const string = friends.join(', ');
 
 console.log(string);
 
-// join()
-const joinedString = friends.join(', ');
-console.log(joinedString);
+// const cards = [
+//   'Карточка-1',
+//   'Карточка-2',
+//   'Карточка-3',
+//   'Карточка-4',
+//   'Карточка-5',
+// ];
 
-// Task 2
+// const cardToRemove = 'Карточка-3';
+
+// const indexToRemove = cards.indexOf(cardToRemove);
+
+// if (indexToRemove !== -1) {
+//   cards.splice(indexToRemove, 1);
+// }
+
+// console.log(cards);
+
+// const cards = [
+//   'Карточка-1',
+//   'Карточка-2',
+//   'Карточка-3',
+//   'Карточка-4',
+//   'Карточка-5',
+// ];
+
+// const cardToInsert = 'Карточка-6';
+
+// cards.splice(3, 0, cardToInsert);
+
+// console.log(cards);
+
 const cards = [
-    'Карточка-1',
-    'Карточка-2',
-    'Карточка-3',
-    'Карточка-4',
-    'Карточка-5'
+  'Карточка-1',
+  'Карточка-2',
+  'Карточка-3',
+  'Карточка-4',
+  'Карточка-5',
 ];
 
-const cardToRemove = 'Карточка-3';
-const cardToInsert = 'Карточка-6';
 const cardToUpdate = 'Карточка-4';
+const newCardValue = 'Карточка-7';
 
-// Removing
-const indexToRemove = cards.indexOf(cardToRemove);
-if (indexToRemove !== -1) {
-    cards.splice(indexToRemove, 1);
-}
-
-// Inserting
-cards.push(cardToInsert);
-
-// Updating
 const indexToUpdate = cards.indexOf(cardToUpdate);
+
 if (indexToUpdate !== -1) {
-    cards[indexToUpdate] = 'Оновлена Карточка-4';
+  cards.splice(indexToUpdate, 1, newCardValue);
 }
 
 console.log(cards);
+
+
