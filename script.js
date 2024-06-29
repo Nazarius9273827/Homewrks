@@ -244,83 +244,152 @@
         //     }
 
 // 1. Створення об'єкта "bankAccount"
-let bankAccount = {
-  ownerName: "",
-  accountNumber: "",
-  balance: 0,
-  deposit: function(amount) {
-      this.balance += amount;
-      console.log(`Гроші успішно додано на рахунок. Залишок: ${this.balance}`);
-  },
-  withdraw: function(amount) {
-      if (amount <= this.balance) {
-          this.balance -= amount;
-          console.log(`Гроші успішно знято з рахунку. Залишок: ${this.balance}`);
-      } else {
-          console.log("Недостатньо коштів на рахунку!");
-      }
-  }
-};
+// let bankAccount = {
+//   ownerName: "",
+//   accountNumber: "",
+//   balance: 0,
+//   deposit: function(amount) {
+//       this.balance += amount;
+//       console.log(`Гроші успішно додано на рахунок. Залишок: ${this.balance}`);
+//   },
+//   withdraw: function(amount) {
+//       if (amount <= this.balance) {
+//           this.balance -= amount;
+//           console.log(`Гроші успішно знято з рахунку. Залишок: ${this.balance}`);
+//       } else {
+//           console.log("Недостатньо коштів на рахунку!");
+//       }
+//   }
+// };
 
-// 2. Створення об'єкта "weather"
-let weather = {
-  temperature: 0,
-  humidity: 0,
-  windSpeed: 0,
-  checkTemperature: function() {
-      return this.temperature < 0;
-  }
-};
+// // 2. Створення об'єкта "weather"
+// let weather = {
+//   temperature: 0,
+//   humidity: 0,
+//   windSpeed: 0,
+//   checkTemperature: function() {
+//       return this.temperature < 0;
+//   }
+// };
 
-// 3. Створення об'єкта "user"
-let user = {
-  name: "Test",
-  email: "test123@gmail.com",
-  password: "12345678",
-  login: function(email, password) {
-      if (email === this.email && password === this.password) {
-          console.log("Ви успішно увійшли!");
-      } else {
-          console.log("Неправильний email або пароль!");
-      }
-  }
-};
+// // 3. Створення об'єкта "user"
+// let user = {
+//   name: "Test",
+//   email: "test123@gmail.com",
+//   password: "12345678",
+//   login: function(email, password) {
+//       if (email === this.email && password === this.password) {
+//           console.log("Ви успішно увійшли!");
+//       } else {
+//           console.log("Неправильний email або пароль!");
+//       }
+//   }
+// };
 
-// 4. Створення об'єкта "movie"
-let movie = {
-  title: "",
-  director: "",
-  year: "",
-  rating: "",
-  checkRating: function() {
-      return this.rating > 8;
-  }
-};
+// // 4. Створення об'єкта "movie"
+// let movie = {
+//   title: "",
+//   director: "",
+//   year: "",
+//   rating: "",
+//   checkRating: function() {
+//       return this.rating > 8;
+//   }
+// };
 
-// Використання prompt для введення даних користувачем та виклик методів
-bankAccount.ownerName = prompt("Введіть ваше ім'я:");
-bankAccount.accountNumber = prompt("Введіть номер вашого рахунку:");
-let depositAmount = parseFloat(prompt("Введіть суму для поповнення рахунку:"));
-bankAccount.deposit(depositAmount);
+// // Використання prompt для введення даних користувачем та виклик методів
+// bankAccount.ownerName = prompt("Введіть ваше ім'я:");
+// bankAccount.accountNumber = prompt("Введіть номер вашого рахунку:");
+// let depositAmount = parseFloat(prompt("Введіть суму для поповнення рахунку:"));
+// bankAccount.deposit(depositAmount);
 
-weather.temperature = parseFloat(prompt("Введіть температуру:"));
-if (weather.checkTemperature()) {
-  console.log("Температура нижче 0 градусів Цельсія");
-} else {
-  console.log("Температура вище або рівна 0 градусів Цельсія");
+// weather.temperature = parseFloat(prompt("Введіть температуру:"));
+// if (weather.checkTemperature()) {
+//   console.log("Температура нижче 0 градусів Цельсія");
+// } else {
+//   console.log("Температура вище або рівна 0 градусів Цельсія");
+// }
+
+// user.email = prompt("Введіть ваш email:");
+// user.password = prompt("Введіть ваш пароль:");
+// user.login(prompt("Введіть ваш email для входу:"), prompt("Введіть ваш пароль для входу:"));
+
+// movie.title = "Inception";
+// movie.director = "Christopher Nolan";
+// movie.year = "2010";
+// movie.rating = 8.8;
+// console.log(`Назва фільму: ${movie.title}, Рейтинг: ${movie.rating}`);
+// if (movie.checkRating()) {
+//   console.log("Фільм має високий рейтинг!");
+// } else {
+//   console.log("Фільм має низький рейтинг.");
+// }
+
+// const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+// let string = '';
+
+// for (let i = 0; i < friends.length; i++) {
+//     string += friends[i];
+//     if (i < friends.length - 1) {
+//         string += ', ';
+//     }
+// }
+
+// console.log(string);
+
+const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+
+const string = friends.join(', ');
+
+console.log(string);
+
+// const cards = [
+//   'Карточка-1',
+//   'Карточка-2',
+//   'Карточка-3',
+//   'Карточка-4',
+//   'Карточка-5',
+// ];
+
+// const cardToRemove = 'Карточка-3';
+
+// const indexToRemove = cards.indexOf(cardToRemove);
+
+// if (indexToRemove !== -1) {
+//   cards.splice(indexToRemove, 1);
+// }
+
+// console.log(cards);
+
+// const cards = [
+//   'Карточка-1',
+//   'Карточка-2',
+//   'Карточка-3',
+//   'Карточка-4',
+//   'Карточка-5',
+// ];
+
+// const cardToInsert = 'Карточка-6';
+
+// cards.splice(3, 0, cardToInsert);
+
+// console.log(cards);
+
+const cards = [
+  'Карточка-1',
+  'Карточка-2',
+  'Карточка-3',
+  'Карточка-4',
+  'Карточка-5',
+];
+
+const cardToUpdate = 'Карточка-4';
+const newCardValue = 'Карточка-7';
+
+const indexToUpdate = cards.indexOf(cardToUpdate);
+
+if (indexToUpdate !== -1) {
+  cards.splice(indexToUpdate, 1, newCardValue);
 }
 
-user.email = prompt("Введіть ваш email:");
-user.password = prompt("Введіть ваш пароль:");
-user.login(prompt("Введіть ваш email для входу:"), prompt("Введіть ваш пароль для входу:"));
-
-movie.title = "Inception";
-movie.director = "Christopher Nolan";
-movie.year = "2010";
-movie.rating = 8.8;
-console.log(`Назва фільму: ${movie.title}, Рейтинг: ${movie.rating}`);
-if (movie.checkRating()) {
-  console.log("Фільм має високий рейтинг!");
-} else {
-  console.log("Фільм має низький рейтинг.");
-}
+console.log(cards);
