@@ -243,31 +243,32 @@
 //             console.log("Invalid operation!");
 //     }
 
-const user = {
-  name: "Nazar",
-  age: 15,
-  hobby: "IT",
-  premium: true,
+let user = {
+  name: 'Nazar',
+  hobby: 'IT',
+  premium: true
 };
 
-const { mood = "happy", hobby = "skydiving", premium = "false" } = user;
+user.mood = 'happy';
+user.hobby = 'skydiving';
+user.premium = false;
 
 for (const key of Object.keys(user)) {
-  console.log(`${key}: ${user[key]}`);
+  const { [key]: value } = user;
+  console.log(`${key}: ${value}`);
 }
 
 function countProps(obj) {
   return Object.keys(obj).length;
 }
 
-var car = {
-  brand: 'Toyota',
-  model: 'Camry',
-  year: 2022
+const exampleObject = {
+  name: 'Alice',
+  age: 25,
+  city: 'New York'
 };
 
-console.log(countProps(car));
-
+console.log(countProps(exampleObject));
 function findBestEmployee(employees) {
   let maxTasks = 0;
   let bestEmployee = '';
@@ -283,10 +284,9 @@ function findBestEmployee(employees) {
 }
 
 const employees = {
-  "John": 10,
-  "Jane": 8,
-  "Doe": 12,
-  "Smith": 9
+  John: 5,
+  Alice: 10,
+  Bob: 7
 };
 
 console.log(findBestEmployee(employees));
@@ -301,93 +301,106 @@ function countTotalSalary(employees) {
   return totalSalary;
 }
 
-// Приклад використання:
 const salaries = {
-  "John": 3000,
-  "Jane": 2500,
-  "Doe": 4000,
-  "Smith": 3500
+  John: 3000,
+  Alice: 4000,
+  Bob: 2500
 };
 
 console.log(countTotalSalary(salaries));
 
 function getAllPropValues(arr, prop) {
-  const propValues = [];
-
-  for (const obj of arr) {
-    if (prop in obj) {
-      propValues.push(obj[prop]);
-    }
-  }
-
-  return propValues;
+  return arr
+    .map(item => {
+      const { [prop]: value } = item;
+      return value;
+    })
+    .filter(value => value !== undefined);
 }
 
 const products = [
-  { name: 'Apple', price: 2 },
-  { name: 'Banana', price: 3 },
-  { name: 'Orange', price: 4 }
+  { name: 'apple', price: 30 },
+  { name: 'banana', price: 20 },
+  { name: 'cherry', price: 40 }
 ];
 
-console.log(getAllPropValues(fruits, 'name'));
-console.log(getAllPropValues(fruits, 'price'));
+console.log(getAllPropValues(products, 'price'));
 
-function calculateTotalPrice(allFruits, fruitName) {
+function calculateTotalPrice(allProducts, productName) {
   let totalPrice = 0;
 
-  for (const fruit of allFruits) {
-    if (fruit.name === fruitName) {
-      totalPrice += fruit.price * fruit.quantity;
+  for (const product of allProducts) {
+    const { name, price, quantity } = product;
+    if (name === productName) {
+      totalPrice += price * quantity;
     }
   }
 
   return totalPrice;
 }
 
-const fruits = [
-  { name: 'Apple', price: 2, quantity: 5 },
-  { name: 'Banana', price: 3, quantity: 3 },
-  { name: 'Orange', price: 4, quantity: 2 }
+const allProducts = [
+  { name: 'apple', price: 30, quantity: 5 },
+  { name: 'banana', price: 20, quantity: 10 },
+  { name: 'apple', price: 30, quantity: 3 }
 ];
 
-console.log(calculateTotalPrice(fruits, 'Apple'));
-console.log(calculateTotalPrice(fruits, 'Banana'));
-console.log(calculateTotalPrice(fruits, 'Orange'));
+console.log(calculateTotalPrice(allProducts, 'apple'));
 
 const account = {
   balance: 0,
-  transactions: [],
+  transactionHistory: [],
 
   deposit(amount) {
+    if (amount <= 0) {
+      console.log('Сума депозиту повинна бути позитивною.');
+      return;
+    }
+
     this.balance += amount;
-    this.transactions.push({ type: 'deposit', amount, date: new Date() });
-    console.log(`Deposited ${amount} into account.`);
+    this.transactionHistory.push({ type: 'deposit', amount });
+    console.log(`Внесено ${amount}. Новий баланс: ${this.balance}.`);
   },
 
   withdraw(amount) {
+    if (amount <= 0) {
+      console.log('Сума зняття повинна бути позитивною.');
+      return;
+    }
+
     if (amount > this.balance) {
-      console.log("Insufficient funds.");
+      console.log('Недостатньо коштів для зняття.');
       return;
     }
 
     this.balance -= amount;
-    this.transactions.push({ type: 'withdrawal', amount, date: new Date() });
-    console.log(`Withdrawn ${amount} from account.`);
+    this.transactionHistory.push({ type: 'withdrawal', amount });
+    console.log(`Знято ${amount}. Новий баланс: ${this.balance}.`);
   },
 
   getBalance() {
-    console.log(`Current balance: ${this.balance}`);
+    console.log(`Поточний баланс: ${this.balance}.`);
+    return this.balance;
   },
 
   getTransactionHistory() {
-    console.log("Transaction History:");
-    this.transactions.forEach(transaction => {
-      console.log(`Type: ${transaction.type}, Amount: ${transaction.amount}, Date: ${transaction.date}`);
+    if (this.transactionHistory.length === 0) {
+      console.log('Історія транзакцій пуста.');
+      return [];
+    }
+
+    console.log('Історія транзакцій:');
+    this.transactionHistory.forEach((transaction, index) => {
+      console.log(`${index + 1}. ${transaction.type} на ${transaction.amount}`);
     });
+    return this.transactionHistory;
   }
 };
 
-account.deposit(100);
-account.withdraw(50);
+account.deposit(1000);
+account.withdraw(500);
 account.getBalance();
 account.getTransactionHistory();
+// Історія транзакцій:
+// 1. deposit на 1000
+// 2. withdrawal на 500
