@@ -243,108 +243,103 @@
         //             console.log("Invalid operation!");
         //     }
 
-            const user = {
-              name: 'Nazar',
-              age: 15,
-              hobby: 'IT',
-              premium: true
-            };
-            
-            user.mood = 'happy';
-            
-            user.hobby = 'skydiving';
-            
-            user.premium = false;
-            
-            for (const key of Object.keys(user)) {
-              console.log(`${key}: ${user[key]}`);
-            }
+// Створення об'єкта user
+let user = {
+  name: 'Nazar',
+  hobby: 'IT',
+  premium: true
+};
 
-            function countProps(obj) {
-              var keys = Object.keys(obj);
-              return keys.length;
-            }
-            
-            var car = {
-              brand: 'Toyota',
-              model: 'Camry',
-              year: 2022
-            };
-            
-            console.log(countProps(car));
+user.mood = 'happy';
 
-            function findBestEmployee(employees) {
-              let maxTasks = 0;
-              let bestEmployee = '';
-          
-              for (const employee in employees) {
-                  if (employees.hasOwnProperty(employee)) {
-                      if (employees[employee] > maxTasks) {
-                          maxTasks = employees[employee];
-                          bestEmployee = employee;
-                      }
-                  }
-              }
-          
-              return bestEmployee;
-          }
-          
-          const employees = {
-              'John': 10,
-              'Jane': 8,
-              'Doe': 12,
-              'Alice': 9
-          };
-          
-          console.log(findBestEmployee(employees));
+user.hobby = 'skydiving';
 
-          function countTotalSalary(workers) {
-            let totalSalary = 0;
-          
-            for (let worker in workers) {
-              totalSalary += workers[worker];
-            }
-          
-            return totalSalary;
-          }
-          
-          const workers = {
-            "John": 2000,
-            "Jane": 1800,
-            "Doe": 2200
-          };
-          
-          console.log(countTotalSalary(workers));
+user.premium = false;
 
-          function getAllPropValues(arr, prop) {
-            return arr.map(obj => obj[prop]).filter(value => value !== undefined);
-        }
-        
-        const arr = [
-            { name: 'John', age: 25 },
-            { name: 'Jane', age: 30 },
-            { name: 'Doe' }
-        ];
-        
-        console.log(getAllPropValues(arr, 'name'));
-        console.log(getAllPropValues(arr, 'age'));
+for (const key of Object.keys(user)) {
+  console.log(`${key}: ${user[key]}`);
+}
 
-        function calculateTotalPrice(allProducts, productName) {
-          const product = allProducts.find(product => product.name === productName);
-          if (product) {
-              return product.price * product.quantity;
-          } else {
-              return 0;
-          }
-      }
-      
+function countProps(obj) {
+  return Object.keys(obj).length;
+}
 
-      const allProducts = [
-          { name: 'apple', price: 1, quantity: 10 },
-          { name: 'banana', price: 2, quantity: 5 },
-          { name: 'orange', price: 3, quantity: 3 }
-      ];
-      
-      console.log(calculateTotalPrice(allProducts, 'banana'));
-      console.log(calculateTotalPrice(allProducts, 'orange'));
-      console.log(calculateTotalPrice(allProducts, 'grape'));
+const exampleObject = {
+  name: 'Alice',
+  age: 25,
+  city: 'New York'
+};
+
+console.log(countProps(exampleObject));
+
+function findBestEmployee(employees) {
+  let maxTasks = 0;
+  let bestEmployee = '';
+
+  for (const [name, tasks] of Object.entries(employees)) {
+    if (tasks > maxTasks) {
+      maxTasks = tasks;
+      bestEmployee = name;
+    }
+  }
+
+  return bestEmployee;
+}
+
+const employees = {
+  John: 5,
+  Alice: 10,
+  Bob: 7
+};
+
+console.log(findBestEmployee(employees));
+
+function countTotalSalary(employees) {
+  let totalSalary = 0;
+
+  for (const salary of Object.values(employees)) {
+    totalSalary += salary;
+  }
+
+  return totalSalary;
+}
+
+const salaries = {
+  John: 3000,
+  Alice: 4000,
+  Bob: 2500
+};
+
+console.log(countTotalSalary(salaries));
+
+function getAllPropValues(arr, prop) {
+  return arr.map(item => item[prop]).filter(value => value !== undefined);
+}
+
+const products = [
+  { name: 'apple', price: 30 },
+  { name: 'banana', price: 20 },
+  { name: 'cherry', price: 40 }
+];
+
+console.log(getAllPropValues(products, 'price'));
+
+function calculateTotalPrice(allProducts, productName) {
+  let totalPrice = 0;
+
+  for (const product of allProducts) {
+    if (product.name === productName) {
+      totalPrice += product.price * product.quantity;
+    }
+  }
+
+  return totalPrice;
+}
+
+const allProducts = [
+  { name: 'apple', price: 30, quantity: 5 },
+  { name: 'banana', price: 20, quantity: 10 },
+  { name: 'apple', price: 30, quantity: 3 }
+];
+
+console.log(calculateTotalPrice(allProducts, 'apple'));
