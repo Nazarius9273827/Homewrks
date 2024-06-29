@@ -217,128 +217,95 @@
         //   }
 
         // Task 6: Calculator
-        let firstOperationNumber = prompt("Select first number");
-        let operationSign = prompt("Select operation sign");
-        let secondOperationNumber = prompt("Select second number");
+        // let firstOperationNumber = prompt("Select first number");
+        // let operationSign = prompt("Select operation sign");
+        // let secondOperationNumber = prompt("Select second number");
 
-            let output;
-            switch (operationSign) {
-                case '+':
-                    console.log(Number(firstOperationNumber) + Number(secondOperationNumber));
-                    break;
-                case '-':
-                  console.log(Number(firstOperationNumber) - Number(secondOperationNumber));
-                    break;
-                case '*':
-                  console.log(Number(firstOperationNumber) * Number(secondOperationNumber));
-                    break;
-                case '/':
-                    if (secondOperationNumber === 0) {
-                        console.log("Error! Division by zero.");
-                    } else {
-                      console.log(Number(firstOperationNumber) / Number(secondOperationNumber));
-                    }
-                    break;
-                default:
-                    console.log("Invalid operation!");
-            }
+        //     let output;
+        //     switch (operationSign) {
+        //         case '+':
+        //             console.log(Number(firstOperationNumber) + Number(secondOperationNumber));
+        //             break;
+        //         case '-':
+        //           console.log(Number(firstOperationNumber) - Number(secondOperationNumber));
+        //             break;
+        //         case '*':
+        //           console.log(Number(firstOperationNumber) * Number(secondOperationNumber));
+        //             break;
+        //         case '/':
+        //             if (secondOperationNumber === 0) {
+        //                 console.log("Error! Division by zero.");
+        //             } else {
+        //               console.log(Number(firstOperationNumber) / Number(secondOperationNumber));
+        //             }
+        //             break;
+        //         default:
+        //             console.log("Invalid operation!");
+        //     }
             
-            function logItems(array) {
-              for (let i = 0; i < array.length; i++) {
-                console.log(`${i + 1} - ${array[i]}`);
-              }
-            }
-            
-            // Приклад використання:
-            const fruits = ['Mango', 'Poly', 'Ajax'];
-            logItems(fruits);
+        function logItems(array) {
+          for (let i = 0; i < array.length; i++) {
+              console.log(`${i + 1} - ${array[i]}`);
+          }
+      }
+      
+      logItems(['Mango', 'Poly', 'Ajax']);
+      
+      function calculateEngravingPrice(message, pricePerWord) {
+          const words = message.split(' ');
+          return words.length * pricePerWord;
+      }
 
-            function calculateEngravingPrice(message, pricePerWord) {
-              // Розділяємо рядок на слова за прогалинами
-              const words = message.split(' ');
-              // Підрахунок загальної ціни
-              const totalPrice = words.length * pricePerWord;
-              return totalPrice;
-            }
-            
-            // Приклад використання:
-            const message = "Lorem ipsum dolor sit amet";
-            const pricePerWord = 10;
-            const totalPrice = calculateEngravingPrice(message, pricePerWord);
-            console.log(totalPrice); // Виведе 50
-
-            function findLongestWord(string) {
-              // Розділяємо рядок на слова за прогалинами
-              const words = string.split(' ');
-              let longestWord = '';
-            
-              // Ітеруємося по кожному слову
-              for (const word of words) {
-                // Якщо поточне слово довше за найдовше знайдене, замінюємо його
-                if (word.length > longestWord.length) {
+      console.log(calculateEngravingPrice('Hello world', 10));
+      
+      function findLongestWord(string) {
+          const words = string.split(' ');
+          let longestWord = '';
+      
+          for (const word of words) {
+              if (word.length > longestWord.length) {
                   longestWord = word;
-                }
-              }
-            
-              return longestWord;
-            }
-            
-            // Приклад використання:
-            const sentence = "Lorem ipsum dolor sit amet consectetur adipisicing elit";
-            const longestWord = findLongestWord(sentence);
-            console.log(longestWord);
-            
-            function formatString(string) {
-              if (string.length <= 40) {
-                  return string;
-              } else {
-                  return string.slice(0, 37) + '...';
               }
           }
-          
-          console.log(formatString("Це рядок із менш ніж 40 символами."));
-          console.log(formatString("Це дуже довгий рядок, який перевищує 40 символів тому його потрібно обрізати."));
-
-          function checkForSpam(message) {
-            // Переводимо рядок в нижній регістр для порівняння
-            const lowerCaseMessage = message.toLowerCase();
-            
-            // Перевіряємо, чи містить рядок заборонені слова
-            if (lowerCaseMessage.includes('spam') || lowerCaseMessage.includes('sale')) {
-                return true;
-            } else {
-                return false;
-            }
-        }
       
-        console.log(checkForSpam("Купівля цього товару - це найкраща розпродаж!"));
-        console.log(checkForSpam("Цей лист не містить заборонених слів."));
-        console.log(checkForSpam("Вигравайте суперпризи у нашому розіграші!"));
-        console.log(checkForSpam("Спам - це неприємна річ."));
-        
-        const numbers = [];
+          return longestWord;
+      }
+      
+      console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
+      
+      function formatString(string) {
+          if (string.length <= 40) {
+              return string;
+          }
+          return string.slice(0, 40) + '...';
+      }
+      
+      console.log(formatString('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')); // 'Lorem ipsum dolor sit amet, consectetur adipisci...'
+      
+      function checkForSpam(message) {
+          const normalizedMessage = message.toLowerCase();
+          return normalizedMessage.includes('spam') || normalizedMessage.includes('sale');
+      }
 
-while (true) {
-    let input = prompt('Введіть число:');
-    
-    if (input === null) {
-        break;
-    } else {
-        input = Number(input);
-        if (!isNaN(input)) {
-            numbers.push(input);
-        } else {
-            alert('Було введено не число, попробуйте ще раз.');
-        }
-    }
-}
-
-if (numbers.length > 0) {
-    let total = 0;
-    for (let number of numbers) {
-        total += number;
-    }
-    console.log(`Загальна сума чисел дорівнює ${total}`);
-} else {
-    console.log('Масив чисел порожній.');
-}
+      console.log(checkForSpam('This is a spam message'));
+      console.log(checkForSpam('This is a regular message'));
+      
+      let input;
+      const numbers = [];
+      let total = 0;
+      
+      while (true) {
+          input = prompt('Введіть число');
+          if (input === null) break;
+          if (!isNaN(input) && input.trim() !== '') {
+              numbers.push(Number(input));
+          } else {
+              alert('Було введено не число, попробуйте ще раз');
+          }
+      }
+      
+      for (const number of numbers) {
+          total += number;
+      }
+      
+      console.log(`Загальна сума чисел дорівнює ${total}`);
