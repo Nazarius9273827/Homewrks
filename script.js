@@ -243,33 +243,43 @@
 //             console.log("Invalid operation!");
 //     }
 
+const calculateTotalBalance = users => {
+  return users.reduce((total, user) => total + user.balance, 0);
+};
+
+console.log(calculateTotalBalance(users)); // 20916
+
 const users = [
-  {
-    name: "Alice",
-    balance: 1500,
-    friends: ["Bob", "Charlie"],
-    skills: ["JavaScript", "HTML", "CSS"]
-  },
-  {
-    name: "Bob",
-    balance: 2500,
-    friends: ["Alice", "Eve"],
-    skills: ["Python", "Django", "JavaScript"]
-  },
-  {
-    name: "Charlie",
-    balance: 3000,
-    friends: ["Alice", "Bob"],
-    skills: ["Java", "Spring", "HTML"]
-  }
+  { name: 'Alice', friends: ['Bob', 'Charlie'] },
+  { name: 'Bob', friends: ['Alice', 'David'] },
+  { name: 'Charlie', friends: ['Alice', 'Eve'] },
+  { name: 'David', friends: ['Bob'] },
+  { name: 'Eve', friends: ['Charlie'] }
 ];
 
-const totalBalance = users.reduce((sum, user) => sum + user.balance, 0);
-console.log(totalBalance);
+const getUsersWithFriend = (users, friendName) => {
+  return users.reduce((acc, user) => {
+    if (user.friends.includes(friendName)) {
+      acc.push(user.name);
+    }
+    return acc;
+  }, []);
+};
 
-const friendName = "Alice";
-const usersWithFriend = users
-  .filter(user => user.friends.includes(friendName))
-  .map(user => user.name);
 
-console.log(usersWithFriend);
+const getNamesSortedByFriendsCount = users => {
+  return users
+    .slice()
+    .sort((a, b) => a.friends.length - b.friends.length)
+    .map(user => user.name);
+};
+
+console.log(getNamesSortedByFriendsCount(users));
+
+const getSortedUniqueSkills = users => {
+  const allSkills = users.flatMap(user => user.skills);
+  const uniqueSkills = [...new Set(allSkills)];
+  return uniqueSkills.sort();
+};
+
+console.log(getSortedUniqueSkills(users));
